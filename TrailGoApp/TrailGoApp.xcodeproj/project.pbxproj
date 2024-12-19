@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		A1DCD6BC2CD0BF1C0032A457 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1DCD6A32CD0BF1A0032A457 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1DCD6AA2CD0BF1A0032A457;
+			remoteInfo = TrailGoApp;
+		};
+		A1DCD6C62CD0BF1C0032A457 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1DCD6A32CD0BF1A0032A457 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1DCD6AA2CD0BF1A0032A457;
+			remoteInfo = TrailGoApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1DCD6AB2CD0BF1A0032A457 /* TrailGoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailGoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1DCD6BB2CD0BF1C0032A457 /* TrailGoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailGoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1DCD6C52CD0BF1C0032A457 /* TrailGoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailGoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A1DCD6AD2CD0BF1A0032A457 /* TrailGoApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TrailGoApp;
+			sourceTree = "<group>";
+		};
+		A1DCD6BE2CD0BF1C0032A457 /* TrailGoAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TrailGoAppTests;
+			sourceTree = "<group>";
+		};
+		A1DCD6C82CD0BF1C0032A457 /* TrailGoAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TrailGoAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1DCD6A82CD0BF1A0032A457 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DCD6B82CD0BF1C0032A457 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DCD6C22CD0BF1C0032A457 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1DCD6A22CD0BF1A0032A457 = {
+			isa = PBXGroup;
+			children = (
+				A1DCD6AD2CD0BF1A0032A457 /* TrailGoApp */,
+				A1DCD6BE2CD0BF1C0032A457 /* TrailGoAppTests */,
+				A1DCD6C82CD0BF1C0032A457 /* TrailGoAppUITests */,
+				A1DCD6AC2CD0BF1A0032A457 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1DCD6AC2CD0BF1A0032A457 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1DCD6AB2CD0BF1A0032A457 /* TrailGoApp.app */,
+				A1DCD6BB2CD0BF1C0032A457 /* TrailGoAppTests.xctest */,
+				A1DCD6C52CD0BF1C0032A457 /* TrailGoAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1DCD6AA2CD0BF1A0032A457 /* TrailGoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1DCD6CF2CD0BF1C0032A457 /* Build configuration list for PBXNativeTarget "TrailGoApp" */;
+			buildPhases = (
+				A1DCD6A72CD0BF1A0032A457 /* Sources */,
+				A1DCD6A82CD0BF1A0032A457 /* Frameworks */,
+				A1DCD6A92CD0BF1A0032A457 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A1DCD6AD2CD0BF1A0032A457 /* TrailGoApp */,
+			);
+			name = TrailGoApp;
+			packageProductDependencies = (
+			);
+			productName = TrailGoApp;
+			productReference = A1DCD6AB2CD0BF1A0032A457 /* TrailGoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1DCD6BA2CD0BF1C0032A457 /* TrailGoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1DCD6D22CD0BF1C0032A457 /* Build configuration list for PBXNativeTarget "TrailGoAppTests" */;
+			buildPhases = (
+				A1DCD6B72CD0BF1C0032A457 /* Sources */,
+				A1DCD6B82CD0BF1C0032A457 /* Frameworks */,
+				A1DCD6B92CD0BF1C0032A457 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1DCD6BD2CD0BF1C0032A457 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A1DCD6BE2CD0BF1C0032A457 /* TrailGoAppTests */,
+			);
+			name = TrailGoAppTests;
+			packageProductDependencies = (
+			);
+			productName = TrailGoAppTests;
+			productReference = A1DCD6BB2CD0BF1C0032A457 /* TrailGoAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A1DCD6C42CD0BF1C0032A457 /* TrailGoAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1DCD6D52CD0BF1C0032A457 /* Build configuration list for PBXNativeTarget "TrailGoAppUITests" */;
+			buildPhases = (
+				A1DCD6C12CD0BF1C0032A457 /* Sources */,
+				A1DCD6C22CD0BF1C0032A457 /* Frameworks */,
+				A1DCD6C32CD0BF1C0032A457 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1DCD6C72CD0BF1C0032A457 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A1DCD6C82CD0BF1C0032A457 /* TrailGoAppUITests */,
+			);
+			name = TrailGoAppUITests;
+			packageProductDependencies = (
+			);
+			productName = TrailGoAppUITests;
+			productReference = A1DCD6C52CD0BF1C0032A457 /* TrailGoAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1DCD6A32CD0BF1A0032A457 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A1DCD6AA2CD0BF1A0032A457 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					A1DCD6BA2CD0BF1C0032A457 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A1DCD6AA2CD0BF1A0032A457;
+					};
+					A1DCD6C42CD0BF1C0032A457 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A1DCD6AA2CD0BF1A0032A457;
+					};
+				};
+			};
+			buildConfigurationList = A1DCD6A62CD0BF1A0032A457 /* Build configuration list for PBXProject "TrailGoApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1DCD6A22CD0BF1A0032A457;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A1DCD6AC2CD0BF1A0032A457 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1DCD6AA2CD0BF1A0032A457 /* TrailGoApp */,
+				A1DCD6BA2CD0BF1C0032A457 /* TrailGoAppTests */,
+				A1DCD6C42CD0BF1C0032A457 /* TrailGoAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1DCD6A92CD0BF1A0032A457 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DCD6B92CD0BF1C0032A457 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DCD6C32CD0BF1C0032A457 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1DCD6A72CD0BF1A0032A457 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DCD6B72CD0BF1C0032A457 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1DCD6C12CD0BF1C0032A457 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1DCD6BD2CD0BF1C0032A457 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1DCD6AA2CD0BF1A0032A457 /* TrailGoApp */;
+			targetProxy = A1DCD6BC2CD0BF1C0032A457 /* PBXContainerItemProxy */;
+		};
+		A1DCD6C72CD0BF1C0032A457 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1DCD6AA2CD0BF1A0032A457 /* TrailGoApp */;
+			targetProxy = A1DCD6C62CD0BF1C0032A457 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A1DCD6CD2CD0BF1C0032A457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1DCD6CE2CD0BF1C0032A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1DCD6D02CD0BF1C0032A457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrailGoApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pwr.TrailGoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1DCD6D12CD0BF1C0032A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrailGoApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pwr.TrailGoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A1DCD6D32CD0BF1C0032A457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pwr.TrailGoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrailGoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrailGoApp";
+			};
+			name = Debug;
+		};
+		A1DCD6D42CD0BF1C0032A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pwr.TrailGoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrailGoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrailGoApp";
+			};
+			name = Release;
+		};
+		A1DCD6D62CD0BF1C0032A457 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pwr.TrailGoAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TrailGoApp;
+			};
+			name = Debug;
+		};
+		A1DCD6D72CD0BF1C0032A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pwr.TrailGoAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TrailGoApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1DCD6A62CD0BF1A0032A457 /* Build configuration list for PBXProject "TrailGoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1DCD6CD2CD0BF1C0032A457 /* Debug */,
+				A1DCD6CE2CD0BF1C0032A457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1DCD6CF2CD0BF1C0032A457 /* Build configuration list for PBXNativeTarget "TrailGoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1DCD6D02CD0BF1C0032A457 /* Debug */,
+				A1DCD6D12CD0BF1C0032A457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1DCD6D22CD0BF1C0032A457 /* Build configuration list for PBXNativeTarget "TrailGoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1DCD6D32CD0BF1C0032A457 /* Debug */,
+				A1DCD6D42CD0BF1C0032A457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1DCD6D52CD0BF1C0032A457 /* Build configuration list for PBXNativeTarget "TrailGoAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1DCD6D62CD0BF1C0032A457 /* Debug */,
+				A1DCD6D72CD0BF1C0032A457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1DCD6A32CD0BF1A0032A457 /* Project object */;
+}
