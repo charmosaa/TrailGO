@@ -61,8 +61,8 @@ struct ContentView: View {
 
             // MapView z aktualizowaną lokalizacją
             MapLine(linesData: [
-                MapLineData(coordinates: line1, color: .blue),
-                MapLineData(coordinates: line2, color: .red)
+                MapLineData(coordinates: line1, color: .blue, name: "Line1",imageName: "gss" ),
+                MapLineData(coordinates: line2, color: .red,name: "Line2",imageName: "gss")
             ])
             .edgesIgnoringSafeArea(.all)
         }

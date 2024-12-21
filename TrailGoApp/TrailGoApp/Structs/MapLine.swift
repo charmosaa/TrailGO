@@ -2,10 +2,12 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-// Struktura reprezentująca pojedynczą linię z jej współrzędnymi i kolorem
+// Struktura reprezentująca pojedynczą linię z jej współrzędnymi, kolorem oraz nazwą
 struct MapLineData {
     let coordinates: [CLLocationCoordinate2D]  // Współrzędne linii
     let color: UIColor  // Kolor linii
+    let name: String    // Nazwa linii
+    let imageName: String  // Nazwa pliku z obrazkiem (obrazek w assets)
 }
 
 // MapViewWithPolylines to handle multiple MKPolylines with different colors
@@ -20,14 +22,20 @@ struct MapLine: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        // Usuwamy poprzednie poliliny
+        // Usuwamy poprzednie poliliny i anotacje
         uiView.removeOverlays(uiView.overlays)
+        uiView.removeAnnotations(uiView.annotations)
         
         // Tworzymy słownik, w którym przechowujemy przypisane kolory
         for lineData in linesData {
             let polyline = MKPolyline(coordinates: lineData.coordinates, count: lineData.coordinates.count)
             context.coordinator.polylineColorMap[polyline] = lineData.color
             uiView.addOverlay(polyline, level: .aboveRoads)
+            
+            // Obliczamy środek linii i dodajemy anotację
+            let centerCoordinate = centerOfPolyline(lineData.coordinates)
+            let annotation = LineAnnotation(coordinate: centerCoordinate, title: lineData.name, imageName: lineData.imageName)
+            uiView.addAnnotation(annotation)
         }
     }
     
@@ -52,5 +60,72 @@ struct MapLine: UIViewRepresentable {
             }
             return MKOverlayRenderer(overlay: overlay)
         }
+        
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            if let lineAnnotation = annotation as? LineAnnotation {
+                let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "LineAnnotation")
+                annotationView.canShowCallout = false
+                
+                // Ładujemy obrazek z assets na podstawie jego nazwy
+                if let image = UIImage(named: lineAnnotation.imageName) {
+                    let imageView = UIImageView(image: image)
+                    
+                    let newSize = CGSize(width: 50, height: 50)
+                    imageView.frame = CGRect(origin: .zero, size: newSize)
+                    
+                   
+                    
+                    // Dodajemy napis (nazwę linii) pod obrazkiem
+                    let label = UILabel()
+                    label.text = lineAnnotation.title
+                    label.font = UIFont.systemFont(ofSize: 12)
+                    label.textColor = .black
+                    label.sizeToFit()
+                    
+                    let contSize = CGSize(width: 60, height: 60)
+                    let containerView = UIStackView()
+                    containerView.axis = .vertical
+                    containerView.alignment = .center
+                    containerView.spacing = 8
+                    containerView.backgroundColor = .white
+                    containerView.frame = CGRect(origin: .zero, size: contSize)
+                    containerView.addArrangedSubview(imageView)
+                    containerView.addArrangedSubview(label)
+                  
+                    annotationView.addSubview(containerView)
+                    
+                    // Ustawiamy centerOffset, aby obrazek był odpowiednio pozycjonowany
+                    annotationView.centerOffset = CGPoint(x: 0, y: -20)
+                }
+                
+                return annotationView
+            }
+            return nil
+        }
+    }
+    
+    // Funkcja do obliczania środka polilinii
+    func centerOfPolyline(_ coordinates: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D {
+        var latSum = 0.0
+        var lonSum = 0.0
+        for coordinate in coordinates {
+            latSum += coordinate.latitude
+            lonSum += coordinate.longitude
+        }
+        let count = Double(coordinates.count)
+        return CLLocationCoordinate2D(latitude: latSum / count, longitude: lonSum / count)
+    }
+}
+
+// Niestandardowa anotacja
+class LineAnnotation: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var imageName: String  // Zmieniamy nazwę właściwości na imageName
+    
+    init(coordinate: CLLocationCoordinate2D, title: String, imageName: String) {
+        self.coordinate = coordinate
+        self.title = title
+        self.imageName = imageName
     }
 }
