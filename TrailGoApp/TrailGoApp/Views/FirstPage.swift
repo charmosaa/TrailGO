@@ -10,9 +10,16 @@ import SwiftUI
 
 struct FirstPage: View {
     @AppStorage("isEnglish") private var isEnglish = true
-    private var title: String {
-            isEnglish ? "Hello, World!" : "Witaj, Świecie!"
-        }
+    
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.backgroundColor = .white
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
+    
     var body: some View {
         VStack{
             NavigationView{

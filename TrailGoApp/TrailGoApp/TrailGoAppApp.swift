@@ -11,7 +11,7 @@ import SwiftUI
 struct TrailGoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
+            FirstPage()
+        }                            
     }
 }
