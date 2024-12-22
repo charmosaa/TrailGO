@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Główny Szlak Sudecki",
+        "imageName": "gss",
+        "startingCity": "Świeradów-Zdrój",
+        "endingCity": "Prudnik",
+        "startCoordinate": {
+            "latitude": 50.9026,
+            "longitude": 15.3361
+        },
+        "endCoordinate": {
+            "latitude": 50.3227,
+            "longitude": 17.5784
+        },
+        "colorHex": "#108932",
+        "distance": "422km",
+        "elevation": 14181,
+        "description": "Główny Szlak Sudecki to młodszy brat Głównego Szlaku Beskidzkiego. Przejdź malownicze pasma Sudetów!",
+        "isHike": true,
+        "isBike": false
+    },
+    {
+        "name": "Główny Szlak Beskidzki",
+        "imageName": "gsb",
+        "startingCity": "Ustroń",
+        "endingCity": "Wołosate",
+        "startCoordinate": {
+            "latitude": 49.7175,
+            "longitude": 18.8111
+        },
+        "endCoordinate": {
+            "latitude": 49.1061,
+            "longitude": 22.6689
+        },
+        "colorHex": "#FF4500",
+        "distance": "496km",
+        "elevation": 19020,
+        "description": "Najdłuższy szlak pieszy w Polsce, prowadzący przez Beskidy. Odkryj piękno gór!",
+        "isHike": true,
+        "isBike": false
+    },
+    {
+        "name": "Green Velo",
+        "imageName": "greenVelo",
+        "startingCity": "Elbląg",
+        "endingCity": "Końskie",
+        "startCoordinate": {
+            "latitude": 54.1526,
+            "longitude": 19.4046
+        },
+        "endCoordinate": {
+            "latitude": 51.1898,
+            "longitude": 20.4068
+        },
+        "colorHex": "#1E90FF",
+        "distance": "2000km",
+        "elevation": 24500,
+        "description": "Green Velo to najdłuższy szlak rowerowy w Polsce, prowadzący przez wschodnie regiony kraju.",
+        "isHike": false,
+        "isBike": true
+    },
+    {
+        "name": "Szlak Orlich Gniazd",
+        "imageName": "orle",
+        "startingCity": "Kraków",
+        "endingCity": "Częstochowa",
+        "startCoordinate": {
+            "latitude": 50.0614,
+            "longitude": 19.9383
+        },
+        "endCoordinate": {
+            "latitude": 50.7965,
+            "longitude": 19.1241
+        },
+        "colorHex": "#8B0000",
+        "distance": "163km",
+        "elevation": 3800,
+        "description": "Malowniczy szlak prowadzący przez ruiny zamków na Jurze Krakowsko-Częstochowskiej.",
+        "isHike": true,
+        "isBike": true
+    }
+]

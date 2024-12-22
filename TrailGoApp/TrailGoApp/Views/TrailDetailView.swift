@@ -7,7 +7,11 @@
 
 import SwiftUI
 
+
+
 struct TrailDetailView: View {
+    let trail: Trail
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -15,7 +19,7 @@ struct TrailDetailView: View {
                     // Trail Title and Language Toggle
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Główny Szlak Sudecki")
+                            Text(trail.name)
                                 .font(.title)
                                 .fontWeight(.bold)
                             
@@ -46,7 +50,7 @@ struct TrailDetailView: View {
                     
                     // Image Carousel (placeholder for images)
                     ZStack {
-                        Image("trail-placeholder") // Replace with real image
+                        Image(trail.imageName) // Replace with real image
                             .resizable()
                             .scaledToFill()
                             .frame(height: 200)
@@ -61,7 +65,7 @@ struct TrailDetailView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     Rectangle()
-                        .fill(Color(.red))
+                        .fill(Color(hex: trail.colorHex))
                         .frame(height: 15)
                         .cornerRadius(3)
                     
@@ -72,14 +76,14 @@ struct TrailDetailView: View {
                                 HStack {
                                     Image(systemName: "circle.fill")
                                         .foregroundColor(Color(hex: "#108932"))
-                                    Text("Świeradów - Zdrój")
+                                    Text(trail.startingCity)
                                         .font(.subheadline)
                                 }
                                 Spacer()
                                 HStack {
                                     Image(systemName: "circle.fill")
                                         .foregroundColor(.gray)
-                                    Text("Prudnik")
+                                    Text(trail.endingCity)
                                         .font(.subheadline)
                                 }
                             }
@@ -90,7 +94,7 @@ struct TrailDetailView: View {
                         Spacer()
                         
                         
-                        Text("422km")
+                        Text(trail.distance)
                             .font(.title)
                             .fontWeight(.bold)
                         
@@ -98,7 +102,7 @@ struct TrailDetailView: View {
                             HStack {
                                 Image(systemName: "arrow.up.right")
                                     .foregroundColor(Color(hex: "#108932"))
-                                Text("14 181 m")
+                                Text("\(trail.elevation) m")
                                     .font(.subheadline)
                             }
                             Spacer()
@@ -114,7 +118,7 @@ struct TrailDetailView: View {
                     Divider()
                     // Description
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Główny Szlak Sudecki to młodszy brat Głównego Szlaku Beskidzkiego (GSB). Krótszy i mniej uczęszczany czeka jeszcze na odkrycie przez wielu turystów. Chcesz być jedną z osób, które w tym roku dotrą do czerwonej kropki w Świeradowie Zdrój lub Prudniku?")
+                        Text(trail.description)
                             .font(.body)
                         
                         Text("Ukończony przez: 1234 osoby")
@@ -172,9 +176,3 @@ struct TrailDetailView: View {
     }
 }
 
-// MARK: - Preview
-struct TrailDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrailDetailView()
-    }
-}

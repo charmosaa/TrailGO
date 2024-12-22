@@ -2,39 +2,51 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-// Struktura reprezentująca pojedynczą linię z jej współrzędnymi, kolorem oraz nazwą
-struct MapLineData {
-    let coordinates: [CLLocationCoordinate2D]  // Współrzędne linii
-    let color: UIColor  // Kolor linii
-    let name: String    // Nazwa linii
-    let imageName: String  // Nazwa pliku z obrazkiem (obrazek w assets)
+import UIKit
+
+extension UIColor {
+    convenience init?(hex: String) {
+        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexSanitized = hexSanitized.hasPrefix("#") ? String(hexSanitized.dropFirst()) : hexSanitized
+        
+        guard hexSanitized.count == 6 else { return nil }
+        
+        let scanner = Scanner(string: hexSanitized)
+        var rgb: UInt64 = 0
+        
+        guard scanner.scanHexInt64(&rgb) else { return nil }
+        
+        let red = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+        let blue = CGFloat(rgb & 0x0000FF) / 255.0
+        
+        self.init(red: red, green: green, blue: blue, alpha: 1.0)
+    }
 }
 
-// MapViewWithPolylines to handle multiple MKPolylines with different colors
+
 struct MapLine: UIViewRepresentable {
-    let linesData: [MapLineData]  // Tablica struktur MapLineData
+    let trails: [Trail] 
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
-        mapView.showsUserLocation = true // Pokazuje lokalizację użytkownika na mapie
+        mapView.showsUserLocation = true
         return mapView
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        // Usuwamy poprzednie poliliny i anotacje
-        uiView.removeOverlays(uiView.overlays)
-        uiView.removeAnnotations(uiView.annotations)
-        
-        // Tworzymy słownik, w którym przechowujemy przypisane kolory
-        for lineData in linesData {
-            let polyline = MKPolyline(coordinates: lineData.coordinates, count: lineData.coordinates.count)
-            context.coordinator.polylineColorMap[polyline] = lineData.color
+        for trail in trails {
+            let coordinates = [
+                CLLocationCoordinate2D(latitude: trail.startCoordinate.latitude, longitude: trail.startCoordinate.longitude),
+                CLLocationCoordinate2D(latitude: trail.endCoordinate.latitude, longitude: trail.endCoordinate.longitude)
+            ]
+            let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
+            context.coordinator.polylineColorMap[polyline] = UIColor(hex: trail.colorHex)
             uiView.addOverlay(polyline, level: .aboveRoads)
             
-            // Obliczamy środek linii i dodajemy anotację
-            let centerCoordinate = centerOfPolyline(lineData.coordinates)
-            let annotation = LineAnnotation(coordinate: centerCoordinate, title: lineData.name, imageName: lineData.imageName)
+            let centerCoordinate = centerOfPolyline(coordinates)
+            let annotation = LineAnnotation(coordinate: centerCoordinate, title: trail.name, imageName: trail.imageName)
             uiView.addAnnotation(annotation)
         }
     }
@@ -44,18 +56,15 @@ struct MapLine: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
-        // Słownik przechowujący mapowanie polilinii do kolorów
         var polylineColorMap = [MKPolyline: UIColor]()
         
-        // Funkcja do renderowania overlay (polilinii) z odpowiednim kolorem
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polyline = overlay as? MKPolyline {
-                // Tworzymy renderer i przypisujemy kolor z mapy
                 let renderer = MKPolylineRenderer(polyline: polyline)
                 if let color = polylineColorMap[polyline] {
-                    renderer.strokeColor = color  // Ustawiamy kolor z mapy
+                    renderer.strokeColor = color
                 }
-                renderer.lineWidth = 3.0
+                renderer.lineWidth = 5.0
                 return renderer
             }
             return MKOverlayRenderer(overlay: overlay)
@@ -66,34 +75,31 @@ struct MapLine: UIViewRepresentable {
                 let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "LineAnnotation")
                 annotationView.canShowCallout = false
                 
-                // Ładujemy obrazek z assets na podstawie jego nazwy
                 if let image = UIImage(named: lineAnnotation.imageName) {
                     let imageView = UIImageView(image: image)
-                    
-                    let newSize = CGSize(width: 50, height: 50)
+                    let newSize = CGSize(width: 40, height: 40)
                     imageView.frame = CGRect(origin: .zero, size: newSize)
                     
-                   
-                    
-                    // Dodajemy napis (nazwę linii) pod obrazkiem
                     let label = UILabel()
                     label.text = lineAnnotation.title
-                    label.font = UIFont.systemFont(ofSize: 12)
+                    label.font = UIFont.boldSystemFont(ofSize: 12)
                     label.textColor = .black
-                    label.sizeToFit()
+                    label.numberOfLines = 2
+                    label.textAlignment = .center
+                    label.lineBreakMode = .byWordWrapping
                     
-                    let contSize = CGSize(width: 60, height: 60)
                     let containerView = UIStackView()
                     containerView.axis = .vertical
                     containerView.alignment = .center
-                    containerView.spacing = 8
+                    containerView.spacing = 6
+                    containerView.frame = CGRect(x: 0, y: 0, width: 80, height: 90)
                     containerView.backgroundColor = .white
-                    containerView.frame = CGRect(origin: .zero, size: contSize)
+                    
+                    // Dodajemy obrazek i etykietę do kontenera
                     containerView.addArrangedSubview(imageView)
                     containerView.addArrangedSubview(label)
-                  
+                    
                     annotationView.addSubview(containerView)
-                    annotationView.frame = CGRect(x: 0, y: 0, width: 60, height: 80)
                 }
                 
                 return annotationView
@@ -102,7 +108,6 @@ struct MapLine: UIViewRepresentable {
         }
     }
     
-    // Funkcja do obliczania środka polilinii
     func centerOfPolyline(_ coordinates: [CLLocationCoordinate2D]) -> CLLocationCoordinate2D {
         var latSum = 0.0
         var lonSum = 0.0
@@ -115,11 +120,10 @@ struct MapLine: UIViewRepresentable {
     }
 }
 
-// Niestandardowa anotacja
 class LineAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
-    var imageName: String  // Zmieniamy nazwę właściwości na imageName
+    var imageName: String
     
     init(coordinate: CLLocationCoordinate2D, title: String, imageName: String) {
         self.coordinate = coordinate

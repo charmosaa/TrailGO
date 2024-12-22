@@ -20,6 +20,8 @@ struct FirstPage: View {
     }
     
     
+    
+    
     var body: some View {
         VStack{
             NavigationView{
@@ -43,19 +45,16 @@ struct FirstPage: View {
                                     }
 
                     }.tint(Color(hex: "#108932"))
-                    
-                    
-                            .navigationTitle("TrailGo")
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    Toggle(isOn: $isEnglish) {
-                                        Text("PL")
-                                    }
-                                    .toggleStyle(SwitchToggleStyle(tint: .green))
-                                    
-                                }
+                    .navigationTitle("TrailGO")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Toggle(isOn: $isEnglish) {
+                                Text("PL")
                             }
+                            .toggleStyle(SwitchToggleStyle(tint: .green))
                             
+                        }
+                    }.toolbarBackground(.visible, for: .navigationBar)
                     
                 }
             }

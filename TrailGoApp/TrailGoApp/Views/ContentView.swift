@@ -25,22 +25,14 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 }
 
 struct ContentView: View {
+    let trails = loadTrails()
+    
     @StateObject private var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 51.1079, longitude: 17.0385), // Wrocław domyślnie
         span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     )
-    
-    let line1: [CLLocationCoordinate2D] = [
-        CLLocationCoordinate2D(latitude: 50.8997, longitude: 15.3642),  // Świeradów Zdrój
-        CLLocationCoordinate2D(latitude: 50.3282, longitude: 17.2855)   // Prudnik
-    ]
-    
-    let line2: [CLLocationCoordinate2D] = [
-        CLLocationCoordinate2D(latitude: 51.1079, longitude: 17.0385),  // Wrocław
-        CLLocationCoordinate2D(latitude: 50.6756, longitude: 17.9213)   // Opole
-    ]
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -59,16 +51,11 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(7)
 
-            // MapView z aktualizowaną lokalizacją
-            MapLine(linesData: [
-                MapLineData(coordinates: line1, color: .blue, name: "Line1",imageName: "gss" ),
-                MapLineData(coordinates: line2, color: .red,name: "Line2",imageName: "gss")
-            ])
+            MapLine(trails: trails)
             .edgesIgnoringSafeArea(.all)
         }
         .onChange(of: locationManager.location) { newLocation in
             if let location = newLocation {
-                // Aktualizowanie regionu mapy na podstawie lokalizacji użytkownika
                 region.center = location.coordinate
             }
         }

@@ -6,15 +6,25 @@
 //
 
 import SwiftUI
+import Foundation
+
+func loadTrails() -> [Trail] {
+    guard let url = Bundle.main.url(forResource: "trails", withExtension: "json") else {
+        fatalError("Nie znaleziono pliku trails.json!")
+    }
+    do {
+        let data = try Data(contentsOf: url)
+        let trails = try JSONDecoder().decode([Trail].self, from: data)
+        return trails
+    } catch {
+        fatalError("Błąd ładowania danych z JSON-a: \(error)")
+    }
+}
+
 
 struct TrailsListView: View {
     // Sample trail data
-    let trails: [Trail] = [
-        Trail(name: "Main Sudets Trail", imageName: "trail1", distance: "422 km", description: "Beautiful Sudets trail description."),
-        Trail(name: "Via Regia", imageName: "trail2", distance: "320 km", description: "Historic trail of Via Regia."),
-        Trail(name: "Main Beskid Trail", imageName: "trail3", distance: "517 km", description: "Longest mountain trail."),
-        Trail(name: "Baltic Seaside Trail", imageName: "trail4", distance: "240 km", description: "Scenic seaside trail.")
-    ]
+    let trails = loadTrails()
     
     var body: some View {
         NavigationView {
@@ -46,7 +56,7 @@ struct TrailsListView: View {
                 
                 // Trails List
                 List(trails) { trail in
-                    NavigationLink(destination: TrailDetailView()) {
+                    NavigationLink(destination: TrailDetailView(trail: trail)) {
                         HStack {
                             // Trail Image
                             Image(trail.imageName)
