@@ -93,9 +93,7 @@ struct MapLine: UIViewRepresentable {
                     containerView.addArrangedSubview(label)
                   
                     annotationView.addSubview(containerView)
-                    
-                    // Ustawiamy centerOffset, aby obrazek był odpowiednio pozycjonowany
-                    annotationView.centerOffset = CGPoint(x: 0, y: -20)
+                    annotationView.frame = CGRect(x: 0, y: 0, width: 60, height: 80)
                 }
                 
                 return annotationView
