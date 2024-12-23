@@ -125,7 +125,10 @@ struct TrailDetailView: View {
                             .font(.subheadline)
                             .fontWeight(.bold)
                         
-                        Text("Typ trasy: Piesza")
+                        Text(
+                            trail.isHike && trail.isBike ? "Typ: Piesza, Rowerowa" :
+                                (trail.isHike ? "Typ: Piesza" :
+                                    (trail.isBike ? "Typ: Rowerowa" : "Typ: Nieznany")))
                             .font(.subheadline)
                             .fontWeight(.bold)
                     }

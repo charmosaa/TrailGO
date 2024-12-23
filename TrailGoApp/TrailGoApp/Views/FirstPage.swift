@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct FirstPage: View {
-    @State var selection = 1
+    @State var selection = 0
     @AppStorage("isEnglish") private var isEnglish = true
     
     init() {

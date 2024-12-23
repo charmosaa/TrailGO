@@ -95,7 +95,7 @@ struct MapLine: UIViewRepresentable {
                     containerView.axis = .vertical
                     containerView.alignment = .center
                     containerView.spacing = 6
-                    containerView.frame = CGRect(x: 0, y: 0, width: 80, height: 90)
+                    containerView.frame = CGRect(x: 0, y: 0, width: 85, height: 90)
                     containerView.backgroundColor = .white
                  
                     containerView.addArrangedSubview(imageView)

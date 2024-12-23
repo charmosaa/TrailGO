@@ -12,10 +12,10 @@
             "latitude": 50.3227,
             "longitude": 17.5784
         },
-        "colorHex": "#108932",
+        "colorHex": "#FF3333",
         "distance": "422km",
         "elevation": 14181,
-        "description": "Główny Szlak Sudecki to młodszy brat Głównego Szlaku Beskidzkiego. Przejdź malownicze pasma Sudetów!",
+        "description": "Główny Szlak Sudecki to malownicza trasa przebiegająca przez pasma Sudetów, oferująca przepiękne widoki na góry i doliny. Szlak jest idealnym miejscem na długie piesze wędrówki, prowadząc przez liczne schroniska i punkty widokowe. Wędrówka tym szlakiem pozwala poczuć klimat górskiego krajobrazu oraz poznać historię Sudetów.",
         "isHike": true,
         "isBike": false
     },
@@ -32,10 +32,10 @@
             "latitude": 49.1061,
             "longitude": 22.6689
         },
-        "colorHex": "#FF4500",
+        "colorHex": "#CF0000",
         "distance": "496km",
         "elevation": 19020,
-        "description": "Najdłuższy szlak pieszy w Polsce, prowadzący przez Beskidy. Odkryj piękno gór!",
+        "description": "Najdłuższy pieszy szlak w Polsce, prowadzący przez malownicze pasma Beskidów, z licznymi wzniesieniami i przepięknymi widokami. Szlak ten łączy różnorodne krajobrazy, od lasów po alpejskie łąki. To idealna trasa dla miłośników długich wędrówek górskich, oferująca wyzwania i niezapomniane wrażenia.",
         "isHike": true,
         "isBike": false
     },
@@ -52,10 +52,10 @@
             "latitude": 51.1898,
             "longitude": 20.4068
         },
-        "colorHex": "#1E90FF",
+        "colorHex": "#108932",
         "distance": "2000km",
         "elevation": 24500,
-        "description": "Green Velo to najdłuższy szlak rowerowy w Polsce, prowadzący przez wschodnie regiony kraju.",
+        "description": "Green Velo to najdłuższy szlak rowerowy w Polsce, który biegnie przez wschodnią część kraju, oferując niezwykłe widoki na jeziora, lasy i wschodnią architekturę. To świetna propozycja dla rowerzystów pragnących odkrywać urokliwe, mniej znane zakątki Polski. Trasa łączy różne atrakcje turystyczne, zapewniając komfortowe warunki do jazdy na rowerze.",
         "isHike": false,
         "isBike": true
     },
@@ -72,11 +72,153 @@
             "latitude": 50.7965,
             "longitude": 19.1241
         },
-        "colorHex": "#8B0000",
+        "colorHex": "#AD1122",
         "distance": "163km",
         "elevation": 3800,
-        "description": "Malowniczy szlak prowadzący przez ruiny zamków na Jurze Krakowsko-Częstochowskiej.",
+        "description": "Szlak Orlich Gniazd to niezwykle malownicza trasa, która prowadzi przez Jurę Krakowsko-Częstochowską, łącząc ruiny średniowiecznych zamków. Szlak jest popularny zarówno wśród pieszych turystów, jak i rowerzystów. Wędrując tą trasą, można podziwiać niesamowite krajobrazy wapiennych ostańców i tajemnicze zamki, które zachowały się na przestrzeni wieków.",
         "isHike": true,
         "isBike": true
+    },
+    {
+        "name": "Velo Dunajec",
+        "imageName": "veloDunajec",
+        "startingCity": "Zakopane",
+        "endingCity": "Wietrzychowice",
+        "startCoordinate": {
+            "latitude": 49.2997,
+            "longitude": 19.9491
+        },
+        "endCoordinate": {
+            "latitude": 49.9902,
+            "longitude": 20.3385
+        },
+        "colorHex": "#FFA300",
+        "distance": "237km",
+        "elevation": 2500,
+        "description": "Velo Dunajec to szlak rowerowy, który prowadzi przez malownicze tereny Doliny Dunajca, oferując przepiękne widoki na góry, rzekę oraz wspaniałe atrakcje turystyczne. Szlak łączy Zakopane z Wietrzychowicami, przechodząc przez miejsca takie jak Nowy Targ, Krościenko, czy Sromowce. Idealny dla rowerzystów poszukujących aktywnej formy turystyki i kontaktu z naturą.",
+        "isHike": false,
+        "isBike": true
+    },
+
+    {
+        "name": "Szlak Zamków Piastowskich",
+        "imageName": "zamki",
+        "startingCity": "Świdnica",
+        "endingCity": "Brzeg",
+        "startCoordinate": {
+            "latitude": 50.8476,
+            "longitude": 16.4803
+        },
+        "endCoordinate": {
+            "latitude": 50.8883,
+            "longitude": 17.5896
+        },
+        "colorHex": "#00A52F",
+        "distance": "600km",
+        "elevation": 5000,
+        "description": "Szlak Zamków Piastowskich to piesza trasa prowadząca przez najważniejsze zamki Dolnego Śląska. Szlak ten jest doskonałą okazją, by poznać historię Piastów oraz podziwiać wspaniałą architekturę średniowiecznych twierdz. To trasa, która łączy pasję do historii z miłością do natury, oferując fascynujące widoki na region.",
+        "isHike": true,
+        "isBike": false
+    },
+    {
+        "name": "Mały Szlak Beskidzki",
+        "imageName": "msb",
+        "startingCity": "Bielsko-Biała",
+        "endingCity": "Luboń Wielki",
+        "startCoordinate": {
+            "latitude": 49.8233,
+            "longitude": 19.0292
+        },
+        "endCoordinate": {
+            "latitude": 49.6461,
+            "longitude": 20.0861
+        },
+        "colorHex": "#FF0000",
+        "distance": "137 km",
+        "elevation": 6026,
+        "description": "Mały Szlak Beskidzki to piesza trasa turystyczna o długości 137 kilometrów, oznakowana kolorem czerwonym. Rozpoczyna się w Straconce w Bielsku-Białej, a kończy na Luboniu Wielkim w Beskidzie Wyspowym. Szlak prowadzi przez Beskid Mały, Beskid Makowski oraz Beskid Wyspowy, omijając Główny Szlak Beskidzki. Trasa oferuje malownicze widoki na beskidzkie lasy, zbocza i pasma górskie.",
+        "isHike": true,
+        "isBike": false
+    },
+    {
+      "name": "Szlak Karpacki",
+      "imageName": "karpacki",
+      "startingCity": "Rzeszów",
+      "endingCity": "Grybów",
+      "startCoordinate": {
+        "latitude": 50.005,
+        "longitude": 22.0035
+      },
+      "endCoordinate": {
+        "latitude": 49.615,
+        "longitude": 20.9475
+      },
+      "colorHex": "#0000FF",
+      "distance": "424km",
+      "elevation": 13455,
+      "description": "Szlak Karpacki, znany również jako Niebieski Szlak Rzeszów–Grybów, to trzecia co do długości piesza trasa w Polsce, prowadząca przez dzikie i malownicze tereny Beskidu Niskiego i Bieszczadów. Szlak rozpoczyna się w Rzeszowie, w dzielnicy Biała, a kończy na Dworcu PKP w Grybowie. Oznaczony kolorem niebieskim, oferuje wędrowcom blisko 424 km wędrówki z sumą podejść 13 455 m i sumą zejść 13 355 m. To idealna propozycja dla doświadczonych turystów górskich poszukujących wyzwań i pragnących odkrywać mniej znane zakątki polskich Karpat.",
+      "isHike": true,
+      "isBike": false
+    },
+    {
+      "name": "Główny Szlak Świętokrzyski",
+      "imageName": "swietokrzyski",
+      "startingCity": "Gołoszyce",
+      "endingCity": "Kuźniaki",
+      "startCoordinate": {
+        "latitude": 50.7645,
+        "longitude": 21.2017
+      },
+      "endCoordinate": {
+        "latitude": 50.9442,
+        "longitude": 20.4083
+      },
+      "colorHex": "#FF0000",
+      "distance": "105km",
+      "elevation": 3800,
+      "description": "Główny Szlak Świętokrzyski to najdłuższy szlak turystyczny w Górach Świętokrzyskich, oznaczony kolorem czerwonym. Rozpoczyna się w Gołoszycach, kończy w Kuźniakach i prowadzi przez malownicze tereny, w tym najwyższy szczyt Łysicę, Święty Krzyż oraz Pasmo Jeleniowskie. Szlak oferuje przepiękne widoki oraz liczne atrakcje przyrodnicze i kulturowe.",
+      "isHike": true,
+      "isBike": false
+    },
+    {
+        "name": "Szlak Nadmorski Bałtycki",
+        "imageName": "nadmorski",
+        "startingCity": "Świnoujście",
+        "endingCity": "Żarnowiec",
+        "startCoordinate": {
+            "latitude": 53.9026,
+            "longitude": 14.2442
+        },
+        "endCoordinate": {
+            "latitude": 54.47,
+            "longitude": 18.0597
+        },
+        "colorHex": "#FF0022",
+        "distance": "365km",
+        "elevation": 1813,
+        "description": "Szlak Nadmorski Bałtycki to jedna z najbardziej popularnych tras turystycznych w Polsce, prowadząca wzdłuż całego wybrzeża Bałtyku. Trasa ta łączy najbardziej atrakcyjne nadmorskie miejsca, takie jak plaże, klify, latarnie morskie i porty. Jest to idealny szlak zarówno dla pieszych, jak i rowerzystów, którzy pragną odkrywać polski litoral.",
+        "isHike": true,
+        "isBike": true
+    },
+    {
+        "name": "Niebieski Szlak Sudecki",
+        "imageName": "nss",
+        "startingCity": "Szklarska Poręba",
+        "endingCity": "Pasterka",
+        "startCoordinate": {
+            "latitude": 50.8971,
+            "longitude": 15.5411
+        },
+        "endCoordinate": {
+            "latitude": 50.4272,
+            "longitude": 16.5917
+        },
+        "colorHex": "#00008B",
+        "distance": "440km",
+        "elevation": 12000,
+        "description": "Niebieski Szlak Sudecki to długodystansowy szlak pieszy, który prowadzi przez malownicze pasma Sudetów. Rozpoczyna się w Szklarskiej Porębie, a kończy w Pasterce w Górach Stołowych. Szlak przebiega przez Karkonosze, Góry Kamienne, Góry Sowie, Góry Stołowe i Góry Orlickie, oferując niezapomniane widoki, wspaniałą przyrodę oraz liczne atrakcje turystyczne. Jest to wymagający szlak, idealny dla doświadczonych wędrowców.",
+        "isHike": true,
+        "isBike": false
     }
+
 ]
