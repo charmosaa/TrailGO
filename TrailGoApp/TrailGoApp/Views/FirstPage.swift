@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct FirstPage: View {
+    @State var selection = 1
     @AppStorage("isEnglish") private var isEnglish = true
     
     init() {
@@ -23,26 +24,28 @@ struct FirstPage: View {
     
     
     var body: some View {
+      
+        
         VStack{
             NavigationView{
                 VStack (alignment: .leading){
                     
 
-                    TabView {
+                    TabView(selection: $selection) {
                         ContentView()
                                     .tabItem {
                                         Label("Explore", systemImage: "map")
-                                    }
+                                    }.tag(0)
 
                         TrailsListView()
                                     .tabItem {
-                                        Label("Your Trails ", systemImage: "road.lanes")
-                                    }
+                                        Label("Your Trails ", image: selection == 1 ? "routingColor" : "routingGrey")
+                                    }.tag(1)
 
                         ProfileView()
                                     .tabItem {
                                         Label("Your Profile", systemImage: "person")
-                                    }
+                                    }.tag(2)
 
                     }.tint(Color(hex: "#108932"))
                     .navigationTitle("TrailGO")
@@ -61,6 +64,8 @@ struct FirstPage: View {
         }
     }
 }
+
+
 
 
 #Preview {

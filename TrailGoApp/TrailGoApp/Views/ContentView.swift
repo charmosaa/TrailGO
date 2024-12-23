@@ -27,31 +27,38 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 struct ContentView: View {
     let trails = loadTrails()
     
+    @State private var searchText: String = ""
     @StateObject private var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 51.1079, longitude: 17.0385), // Wrocław domyślnie
         span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     )
-
+    
+    var filteredTrails: [Trail] {
+        
+        let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        return searchedTrails
+    }
+        
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "magnifyingglass")
-                TextField("Search", text: .constant(""))
+                    .padding(.leading)
+                TextField("Search", text: $searchText)
                     .padding(7)
                     .padding(.horizontal, 10)
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.gray, lineWidth: 1)
+                            .stroke(Color(hex: "#108932"), lineWidth: 2)
                     )
-                    .padding(.horizontal)
+                    .padding(.trailing,10)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
-            .padding(7)
-
-            MapLine(trails: trails)
+            .padding(5)
+            MapLine(trails: filteredTrails)
             .edgesIgnoringSafeArea(.all)
         }
         .onChange(of: locationManager.location) { newLocation in

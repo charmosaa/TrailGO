@@ -23,8 +23,27 @@ func loadTrails() -> [Trail] {
 
 
 struct TrailsListView: View {
-    // Sample trail data
     let trails = loadTrails()
+    @State private var searchText: String = ""
+    
+    @State private var showHike: Bool = false
+    @State private var showBike: Bool = false
+    
+    var filteredTrails: [Trail] {
+        
+            let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+            
+            
+            if showHike && showBike {
+                return searchedTrails
+            } else if showHike {
+                return searchedTrails.filter { $0.isHike }
+            } else if showBike {
+                return searchedTrails.filter { $0.isBike }
+            } else {
+                return searchedTrails
+            }
+        }
     
     var body: some View {
         NavigationView {
@@ -35,27 +54,77 @@ struct TrailsListView: View {
                     .fontWeight(.bold)
                     .padding(.top, 10)
                 
-                // Toggle Buttons (To Do / Completed)
+                Rectangle()
+                    .foregroundColor(Color(hex: "#108932"))
+                    .frame(height: 10)
+                    .cornerRadius(20)
+                    .padding(.bottom,40)
+                    .padding(.horizontal, 90)
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .padding(.leading)
+                    TextField("Search", text: $searchText)
+                        .padding(7)
+                        .padding(.horizontal, 10)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color(hex: "#108932"), lineWidth: 2)
+                        )
+                        .padding(.trailing,10)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(5)
+                
+                Divider()
                 HStack {
                     Button("To Do") {
                         // Add logic for "To Do"
                     }
-                    .padding()
+                    .padding(.vertical,7)
+                    .padding(.horizontal)
                     .background(Color(hex: "#108932"))
                     .foregroundColor(.white)
                     .cornerRadius(8)
+                    .frame(height: 20)
                     
                     Button("Completed") {
                         // Add logic for "Completed"
                     }
-                    .padding()
+                    .padding(.vertical,7)
+                    .padding(.horizontal)
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(8)
                 }
-                .padding(.horizontal)
+                
+                Divider()
+                
+                HStack {
+                    Button("Hike") {
+                        showHike.toggle()
+                    }
+                    .padding(.vertical,7)
+                    .padding(.horizontal)
+                    .background(showHike ? Color(hex: "#108932"): Color.gray.opacity(0.2))
+                    .foregroundColor(showHike ? .white : .black)
+                    .cornerRadius(8)
+                    .frame(height: 20)
+                    
+                    Button("Bike") {
+                        showBike.toggle()
+                    }
+                    .padding(.vertical,7)
+                    .padding(.horizontal)
+                    .background(showBike ? Color(hex: "#108932") : Color.gray.opacity(0.2))
+                    .foregroundColor(showBike ? .white : .black)
+                    .cornerRadius(8)
+                }
+                
+                Divider()
                 
                 // Trails List
-                List(trails) { trail in
+                List(filteredTrails) { trail in
                     NavigationLink(destination: TrailDetailView(trail: trail)) {
                         HStack {
                             // Trail Image

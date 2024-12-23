@@ -1,7 +1,6 @@
 import SwiftUI
 import MapKit
 import CoreLocation
-
 import UIKit
 
 extension UIColor {
@@ -36,6 +35,9 @@ struct MapLine: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
+           uiView.removeOverlays(uiView.overlays)
+           uiView.removeAnnotations(uiView.annotations)
+        
         for trail in trails {
             let coordinates = [
                 CLLocationCoordinate2D(latitude: trail.startCoordinate.latitude, longitude: trail.startCoordinate.longitude),
@@ -46,7 +48,8 @@ struct MapLine: UIViewRepresentable {
             uiView.addOverlay(polyline, level: .aboveRoads)
             
             let centerCoordinate = centerOfPolyline(coordinates)
-            let annotation = LineAnnotation(coordinate: centerCoordinate, title: trail.name, imageName: trail.imageName)
+            let annotation = LineAnnotation(coordinate: centerCoordinate, title: trail.name, imageName: trail.imageName, trail: trail)
+            
             uiView.addAnnotation(annotation)
         }
     }
@@ -94,8 +97,7 @@ struct MapLine: UIViewRepresentable {
                     containerView.spacing = 6
                     containerView.frame = CGRect(x: 0, y: 0, width: 80, height: 90)
                     containerView.backgroundColor = .white
-                    
-                    // Dodajemy obrazek i etykietę do kontenera
+                 
                     containerView.addArrangedSubview(imageView)
                     containerView.addArrangedSubview(label)
                     
@@ -124,10 +126,12 @@ class LineAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var imageName: String
+    var trail: Trail
     
-    init(coordinate: CLLocationCoordinate2D, title: String, imageName: String) {
+    init(coordinate: CLLocationCoordinate2D, title: String, imageName: String, trail: Trail) {
         self.coordinate = coordinate
         self.title = title
         self.imageName = imageName
+        self.trail = trail
     }
 }

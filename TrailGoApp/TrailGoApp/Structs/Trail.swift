@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 // Data Model for Trail
-struct Trail: Identifiable, Codable {
+struct Trail: Identifiable,Hashable, Codable {
     let id = UUID()
     let name: String
     let imageName: String
