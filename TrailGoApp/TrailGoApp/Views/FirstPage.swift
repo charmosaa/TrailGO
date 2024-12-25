@@ -69,12 +69,12 @@ struct FirstPage: View {
                     TabView(selection: $selection) {
                         ContentView(languageManager: languageManager)
                                     .tabItem {
-                                        Label("Explore".localized(), systemImage: "map")
+                                        Label("Explore", systemImage: "map")
                                     }.tag(0)
 
                         TrailsListView(languageManager: languageManager)
                                     .tabItem {
-                                        Label("Your Trails".localized(), image: selection == 1 ? "routingColor" : "routingGrey")
+                                        Label("Your Trails", image: selection == 1 ? "routingColor" : "routingGrey")
                                     }.tag(1)
 
                         ProfileView()
