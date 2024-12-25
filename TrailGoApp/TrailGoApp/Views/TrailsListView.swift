@@ -22,33 +22,31 @@ func loadTrails() -> [Trail] {
 }
 
 
+
 struct TrailsListView: View {
+    @StateObject var languageManager: LanguageManager
     let trails = loadTrails()
     @State private var searchText: String = ""
-    
     @State private var showHike: Bool = false
     @State private var showBike: Bool = false
     
     var filteredTrails: [Trail] {
-        
-            let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name.lowercased().contains(searchText.lowercased()) }
-            
-            
-            if showHike && showBike {
-                return searchedTrails
-            } else if showHike {
-                return searchedTrails.filter { $0.isHike }
-            } else if showBike {
-                return searchedTrails.filter { $0.isBike }
-            } else {
-                return searchedTrails
-            }
+        let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name[languageManager.selectedLanguage]?.lowercased().contains(searchText.lowercased()) ?? false }
+
+        if showHike && showBike {
+            return searchedTrails
+        } else if showHike {
+            return searchedTrails.filter { $0.isHike }
+        } else if showBike {
+            return searchedTrails.filter { $0.isBike }
+        } else {
+            return searchedTrails
         }
-    
+    }
+
     var body: some View {
         NavigationView {
             VStack {
-                // Title Header
                 Text("Your Trails")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -60,6 +58,7 @@ struct TrailsListView: View {
                     .cornerRadius(20)
                     .padding(.bottom,40)
                     .padding(.horizontal, 90)
+                
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .padding(.leading)
@@ -78,28 +77,8 @@ struct TrailsListView: View {
                 .padding(5)
                 
                 Divider()
-                HStack {
-                    Button("To Do") {
-                        // Add logic for "To Do"
-                    }
-                    .padding(.vertical,7)
-                    .padding(.horizontal)
-                    .background(Color(hex: "#108932"))
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .frame(height: 20)
-                    
-                    Button("Completed") {
-                        // Add logic for "Completed"
-                    }
-                    .padding(.vertical,7)
-                    .padding(.horizontal)
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(8)
-                }
                 
-                Divider()
-                
+                // Add Filters for Hike/Bike
                 HStack {
                     Button("Hike") {
                         showHike.toggle()
@@ -122,20 +101,18 @@ struct TrailsListView: View {
                 }
                 
                 Divider()
-                
-                // Trails List
+
+                // List of Trails
                 List(filteredTrails) { trail in
-                    NavigationLink(destination: TrailDetailView(trail: trail)) {
+                    NavigationLink(destination: TrailDetailView(trail: trail, languageManager: languageManager)) {
                         HStack {
-                            // Trail Image
                             Image(trail.imageName)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 60, height: 60)
                                 .cornerRadius(8)
-                            
-                            // Trail Name
-                            Text(trail.name)
+
+                            Text(trail.name[languageManager.selectedLanguage] ?? trail.name["en"]!)
                                 .font(.headline)
                         }
                     }
@@ -143,12 +120,6 @@ struct TrailsListView: View {
                 .listStyle(PlainListStyle())
             }
         }
-    }
-}
-
-struct TrailsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrailsListView()
     }
 }
 

@@ -1,0 +1,434 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld m" : {
+
+    },
+    "%lldkm" : {
+
+    },
+    "✓ Completed: 6" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukonczone: 6"
+          }
+        }
+      }
+    },
+    "20 dni 5h" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "20 days 5h"
+          }
+        }
+      }
+    },
+    "Bike" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rowerowa"
+          }
+        }
+      }
+    },
+    "By clicking the button yu accept" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naciskając akceptujesz"
+          }
+        }
+      }
+    },
+    "Completed" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukonczone"
+          }
+        }
+      }
+    },
+    "Email" : {
+
+    },
+    "English" : {
+
+    },
+    "Explore" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odkrywaj"
+          }
+        }
+      }
+    },
+    "Hike" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Piesza"
+          }
+        }
+      }
+    },
+    "Jan Kowalski" : {
+
+    },
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "Language" : {
+
+    },
+    "Login" : {
+
+    },
+    "Login Failed" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logowanie nieudane"
+          }
+        }
+      }
+    },
+    "Login to see your statistics" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaloguj się żeby zobaczyć swoje statystyki"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imie"
+          }
+        }
+      }
+    },
+    "New here? " : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nowy?"
+          }
+        }
+      }
+    },
+    "Ocena:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grade: "
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocena: "
+          }
+        }
+      }
+    },
+    "OK" : {
+
+    },
+    "Password" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haslo"
+          }
+        }
+      }
+    },
+    "Plan your next adventure " : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaplanuj kolejna wyprawę"
+          }
+        }
+      }
+    },
+    "Polski" : {
+
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia Prywatności"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szukaj"
+          }
+        }
+      }
+    },
+    "Sign Up" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utwórz konto"
+          }
+        }
+      }
+    },
+    "Sign Up Failed" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tworzenie konta nie powiodło się"
+          }
+        }
+      }
+    },
+    "Surename" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwisko"
+          }
+        }
+      }
+    },
+    "To Do" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " W planach"
+          }
+        }
+      }
+    },
+    "To do: 4" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W planach: 4"
+          }
+        }
+      }
+    },
+    "Total: 54 123 m" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W sumie: 54 123m"
+          }
+        }
+      }
+    },
+    "Total: 100 days 16h" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W sumie: 10o dni 16h"
+          }
+        }
+      }
+    },
+    "Total: 2134km" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W sumie: 2134km"
+          }
+        }
+      }
+    },
+    "TrailGO" : {
+
+    },
+    "Trudność:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Difficulty: "
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trudność:"
+          }
+        }
+      }
+    },
+    "Typ: Nieznany" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type: Unknown"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ: Nieznany"
+          }
+        }
+      }
+    },
+    "Typ: Piesza" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type: Hike"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ: Piesza"
+          }
+        }
+      }
+    },
+    "Typ: Piesza, Rowerowa" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type: Hike, Bike"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ: Piesza, Rowerowa"
+          }
+        }
+      }
+    },
+    "Typ: Rowerowa" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type: Bike"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ: Rowerowa"
+          }
+        }
+      }
+    },
+    "Ukończony" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finished"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukończony"
+          }
+        }
+      }
+    },
+    "Ukończony przez: 1234 osoby" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finished by: 1234 people"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukończony przez: 1234 osoby"
+          }
+        }
+      }
+    },
+    "W planach" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To do"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W planach"
+          }
+        }
+      }
+    },
+    "Your Profile" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twój Profil"
+          }
+        }
+      }
+    },
+    "Your Trails" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje Szlaki"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -8,9 +8,9 @@
 import SwiftUI
 
 
-
 struct TrailDetailView: View {
     let trail: Trail
+    @ObservedObject var languageManager: LanguageManager
     
     var body: some View {
         NavigationView {
@@ -19,7 +19,7 @@ struct TrailDetailView: View {
                     // Trail Title and Language Toggle
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(trail.name)
+                            Text(trail.name[languageManager.selectedLanguage] ?? trail.name["en"]!)
                                 .font(.title)
                                 .fontWeight(.bold)
                             
@@ -44,7 +44,6 @@ struct TrailDetailView: View {
                             }
                         }
                         Spacer()
-                        
                     }
                     .padding(.horizontal)
                     
@@ -69,7 +68,7 @@ struct TrailDetailView: View {
                         .frame(height: 15)
                         .cornerRadius(3)
                     
-                    VStack{
+                    VStack {
                         // Route Info
                         HStack(spacing: 16) {
                             HStack {
@@ -87,14 +86,13 @@ struct TrailDetailView: View {
                                         .font(.subheadline)
                                 }
                             }
-                            
                         }
                         .padding(.horizontal)
                         
                         Spacer()
                         
                         
-                        Text(trail.distance)
+                        Text("\(trail.distance)km")
                             .font(.title)
                             .fontWeight(.bold)
                         
@@ -109,16 +107,17 @@ struct TrailDetailView: View {
                             HStack {
                                 Image(systemName: "clock")
                                     .foregroundColor(Color(hex: "#108932"))
-                                Text("20 dni 5h")
+                                Text("20 dni 5h") // You can replace this with dynamic data later
                                     .font(.subheadline)
                             }
                         }
                         .padding(.horizontal)
                     }
                     Divider()
+                    
                     // Description
                     VStack(alignment: .leading, spacing: 8) {
-                        Text(trail.description)
+                        Text(trail.description[languageManager.selectedLanguage] ?? trail.description["en"]!)
                             .font(.body)
                         
                         Text("Ukończony przez: 1234 osoby")
@@ -178,4 +177,3 @@ struct TrailDetailView: View {
         }
     }
 }
-

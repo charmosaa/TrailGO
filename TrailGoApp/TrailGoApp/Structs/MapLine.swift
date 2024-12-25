@@ -25,7 +25,8 @@ extension UIColor {
 
 
 struct MapLine: UIViewRepresentable {
-    let trails: [Trail] 
+    let trails: [Trail]
+    @StateObject var languageManager: LanguageManager
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -48,7 +49,7 @@ struct MapLine: UIViewRepresentable {
             uiView.addOverlay(polyline, level: .aboveRoads)
             
             let centerCoordinate = centerOfPolyline(coordinates)
-            let annotation = LineAnnotation(coordinate: centerCoordinate, title: trail.name, imageName: trail.imageName, trail: trail)
+            let annotation = LineAnnotation(coordinate: centerCoordinate, title: trail.name[languageManager.selectedLanguage]!, imageName: trail.imageName, trail: trail)
             
             uiView.addAnnotation(annotation)
         }

@@ -25,6 +25,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 }
 
 struct ContentView: View {
+    @StateObject var languageManager: LanguageManager
     let trails = loadTrails()
     
     @State private var searchText: String = ""
@@ -36,7 +37,7 @@ struct ContentView: View {
     
     var filteredTrails: [Trail] {
         
-        let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name["en"]?.lowercased().contains(searchText.lowercased()) ?? false }
         return searchedTrails
     }
         
@@ -58,7 +59,7 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(5)
-            MapLine(trails: filteredTrails)
+            MapLine(trails: filteredTrails, languageManager: languageManager)
             .edgesIgnoringSafeArea(.all)
         }
         .onChange(of: locationManager.location) { newLocation in
@@ -69,6 +70,4 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+

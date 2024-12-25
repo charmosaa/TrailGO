@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var languageManager: LanguageManager
     var body: some View {
         NavigationView {
             VStack {
@@ -72,7 +73,7 @@ struct ProfileView: View {
                 
             
                 VStack(spacing: 16) {
-                    NavigationLink(destination: TrailsListView()) {
+                    NavigationLink(destination: TrailsListView(languageManager: languageManager)) {
                         Text("Plan your next adventure ")
                             .fontWeight(.bold)
                             .foregroundColor(Color(hex: "#108932"))
