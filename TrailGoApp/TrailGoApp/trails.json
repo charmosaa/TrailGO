@@ -128,5 +128,125 @@
         },
         "isHike": false,
         "isBike": true
-    }
-]
+    },
+     {
+         "name": {
+             "pl": "Szlak Zamków Piastowskich",
+             "en": "Piast Castle Trail"
+         },
+         "description": {
+             "pl": "Szlak Zamków Piastowskich to piesza trasa prowadząca przez najważniejsze zamki Dolnego Śląska. Szlak ten jest doskonałą okazją, by poznać historię Piastów oraz podziwiać wspaniałą architekturę średniowiecznych twierdz. To trasa, która łączy pasję do historii z miłością do natury, oferując fascynujące widoki na region.",
+             "en": "The Piast Castle Trail is a hiking route that leads through the most important castles in Lower Silesia. This trail offers a great opportunity to learn about the history of the Piasts and admire the magnificent architecture of medieval fortresses. It is a route that combines a passion for history with a love of nature, offering fascinating views of the region."
+         },
+         "imageName": "zamki",
+         "startingCity": "Świdnica",
+         "endingCity": "Brzeg",
+         "startCoordinate": { "latitude": 50.8476, "longitude": 16.4803 },
+         "endCoordinate": { "latitude": 50.8883, "longitude": 17.5896 },
+         "colorHex": "#00A52F",
+         "distance": 600,
+         "elevation": 5000,
+         "isHike": true,
+         "isBike": false
+     },
+     {
+         "name": {
+             "pl": "Mały Szlak Beskidzki",
+             "en": "Small Beskid Trail"
+         },
+         "description": {
+             "pl": "Mały Szlak Beskidzki to piesza trasa turystyczna o długości 137 kilometrów, oznakowana kolorem czerwonym. Rozpoczyna się w Straconce w Bielsku-Białej, a kończy na Luboniu Wielkim w Beskidzie Wyspowym. Szlak prowadzi przez Beskid Mały, Beskid Makowski oraz Beskid Wyspowy, omijając Główny Szlak Beskidzki. Trasa oferuje malownicze widoki na beskidzkie lasy, zbocza i pasma górskie.",
+             "en": "The Small Beskid Trail is a 137-kilometer-long hiking route marked in red. It starts in Straconka in Bielsko-Biała and ends at Luboń Wielki in the Beskid Wyspowy. The trail passes through the Beskid Mały, Beskid Makowski, and Beskid Wyspowy, avoiding the Main Beskid Trail. The route offers picturesque views of the Beskid forests, slopes, and mountain ranges."
+         },
+         "imageName": "msb",
+         "startingCity": "Bielsko-Biała",
+         "endingCity": "Luboń Wielki",
+         "startCoordinate": { "latitude": 49.8233, "longitude": 19.0292 },
+         "endCoordinate": { "latitude": 49.6461, "longitude": 20.0861 },
+         "colorHex": "#FF0000",
+         "distance": 137,
+         "elevation": 6026,
+         "isHike": true,
+         "isBike": false
+     },
+     {
+         "name": {
+             "pl": "Szlak Karpacki",
+             "en": "Carpathian Trail"
+         },
+         "description": {
+             "pl": "Szlak Karpacki, znany również jako Niebieski Szlak Rzeszów–Grybów, to trzecia co do długości piesza trasa w Polsce, prowadząca przez dzikie i malownicze tereny Beskidu Niskiego i Bieszczadów. Szlak rozpoczyna się w Rzeszowie, w dzielnicy Biała, a kończy na Dworcu PKP w Grybowie. Oznaczony kolorem niebieskim, oferuje wędrowcom blisko 424 km wędrówki z sumą podejść 13 455 m i sumą zejść 13 355 m. To idealna propozycja dla doświadczonych turystów górskich poszukujących wyzwań i pragnących odkrywać mniej znane zakątki polskich Karpat.",
+             "en": "The Carpathian Trail, also known as the Blue Trail from Rzeszów to Grybów, is the third-longest hiking route in Poland, running through the wild and picturesque areas of the Low Beskids and the Bieszczady Mountains. The trail starts in Rzeszów, in the Biała district, and ends at the Grybów Railway Station. Marked in blue, it offers hikers nearly 424 kilometers of walking with an ascent of 13,455 meters and a descent of 13,355 meters. This is an ideal route for experienced mountain hikers looking for challenges and wishing to explore lesser-known corners of the Polish Carpathians."
+         },
+         "imageName": "karpacki",
+         "startingCity": "Rzeszów",
+         "endingCity": "Grybów",
+         "startCoordinate": { "latitude": 50.005, "longitude": 22.0035 },
+         "endCoordinate": { "latitude": 49.615, "longitude": 20.9475 },
+         "colorHex": "#0000FF",
+         "distance": 424,
+         "elevation": 13455,
+         "isHike": true,
+         "isBike": false
+     },
+     {
+         "name": {
+             "pl": "Główny Szlak Świętokrzyski",
+             "en": "Main Holy Cross Trail"
+         },
+         "description": {
+             "pl": "Główny Szlak Świętokrzyski to najdłuższy szlak turystyczny w Górach Świętokrzyskich, oznaczony kolorem czerwonym. Rozpoczyna się w Gołoszycach, kończy w Kuźniakach i prowadzi przez malownicze tereny, w tym najwyższy szczyt Łysicę, Święty Krzyż oraz Pasmo Jeleniowskie. Szlak oferuje przepiękne widoki oraz liczne atrakcje przyrodnicze i kulturowe.",
+             "en": "The Main Holy Cross Trail is the longest hiking trail in the Świętokrzyskie Mountains, marked in red. It starts in Gołoszyce and ends in Kuźniaki, leading through picturesque areas, including the highest peak, Łysica, the Holy Cross, and the Jeleniowskie Range. The trail offers beautiful views and many natural and cultural attractions."
+         },
+         "imageName": "swietokrzyski",
+         "startingCity": "Gołoszyce",
+         "endingCity": "Kuźniaki",
+         "startCoordinate": { "latitude": 50.7645, "longitude": 21.2017 },
+         "endCoordinate": { "latitude": 50.9442, "longitude": 20.4083 },
+         "colorHex": "#FF0000",
+         "distance": 105,
+         "elevation": 3800,
+         "isHike": true,
+         "isBike": false
+     },
+     {
+         "name": {
+             "pl": "Szlak Nadmorski Bałtycki",
+             "en": "Baltic Sea Coastal Trail"
+         },
+         "description": {
+             "pl": "Szlak Nadmorski Bałtycki to jedna z najbardziej popularnych tras turystycznych w Polsce, prowadząca wzdłuż całego wybrzeża Bałtyku. Trasa ta łączy najbardziej atrakcyjne nadmorskie miejsca, takie jak plaże, klify, latarnie morskie i porty. Jest to idealny szlak zarówno dla pieszych, jak i rowerzystów, którzy pragną odkrywać polski litoral.",
+             "en": "The Baltic Sea Coastal Trail is one of the most popular tourist routes in Poland, running along the entire Baltic coastline. This trail connects the most attractive coastal places, such as beaches, cliffs, lighthouses, and ports. It is an ideal route for both hikers and cyclists who wish to explore the Polish seaside."
+         },
+         "imageName": "nadmorski",
+         "startingCity": "Świnoujście",
+         "endingCity": "Żarnowiec",
+         "startCoordinate": { "latitude": 53.9026, "longitude": 14.2442 },
+         "endCoordinate": { "latitude": 54.47, "longitude": 18.0597 },
+         "colorHex": "#FF0022",
+         "distance": 365,
+         "elevation": 1813,
+         "isHike": true,
+         "isBike": true
+     },
+     {
+         "name": {
+             "pl": "Niebieski Szlak Sudecki",
+             "en": "Sudetes Blue Trail"
+         },
+         "description": {
+             "pl": "Niebieski Szlak Sudecki to długodystansowy szlak pieszy, który prowadzi przez malownicze pasma Sudetów. Rozpoczyna się w Szklarskiej Porębie, a kończy w Pasterce w Górach Stołowych. Szlak przebiega przez Karkonosze, Góry Kamienne, Góry Sowie, Góry Stołowe i Góry Orlickie, oferując niezapomniane widoki, wspaniałą przyrodę oraz liczne atrakcje turystyczne. Jest to wymagający szlak, idealny dla doświadczonych wędrowców.",
+             "en": "The Sudetes Blue Trail is a long-distance hiking trail that passes through the picturesque ranges of the Sudetes. It starts in Szklarska Poręba and ends in Pasterka in the Table Mountains. The trail passes through the Karkonosze, Kamienne, Sowie, Table, and Orlickie Mountains, offering unforgettable views, wonderful nature, and many tourist attractions. It is a challenging trail, ideal for experienced hikers."
+         },
+         "imageName": "nss",
+         "startingCity": "Szklarska Poręba",
+         "endingCity": "Pasterka",
+         "startCoordinate": { "latitude": 50.8971, "longitude": 15.5411 },
+         "endCoordinate": { "latitude": 50.4272, "longitude": 16.5917 },
+         "colorHex": "#00008B",
+         "distance": 440,
+         "elevation": 12000,
+         "isHike": true,
+         "isBike": false
+     }
+ ]
