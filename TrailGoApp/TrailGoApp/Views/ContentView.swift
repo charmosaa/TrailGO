@@ -37,7 +37,7 @@ struct ContentView: View {
     
     var filteredTrails: [Trail] {
         
-        let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name["en"]?.lowercased().contains(searchText.lowercased()) ?? false }
+        let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name[languageManager.selectedLanguage]?.lowercased().contains(searchText.lowercased()) ?? false }
         return searchedTrails
     }
         

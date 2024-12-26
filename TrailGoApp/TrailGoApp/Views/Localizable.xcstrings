@@ -47,17 +47,6 @@
         }
       }
     },
-    "Completed" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ukonczone"
-          }
-        }
-      }
-    },
     "Email" : {
 
     },
@@ -112,6 +101,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaloguj się żeby zobaczyć swoje statystyki"
+          }
+        }
+      }
+    },
+    "max_distance_label" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max Distance: %d km"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maksymalny dystans: %d km"
           }
         }
       }
@@ -224,17 +230,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nazwisko"
-          }
-        }
-      }
-    },
-    "To Do" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : " W planach"
           }
         }
       }

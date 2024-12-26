@@ -29,20 +29,25 @@ struct TrailsListView: View {
     @State private var searchText: String = ""
     @State private var showHike: Bool = false
     @State private var showBike: Bool = false
+    @State private var maxDistance: Double = 2000.0
     
     var filteredTrails: [Trail] {
-        let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name[languageManager.selectedLanguage]?.lowercased().contains(searchText.lowercased()) ?? false }
+            let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name[languageManager.selectedLanguage]?.lowercased().contains(searchText.lowercased()) ?? false }
 
-        if showHike && showBike {
-            return searchedTrails
-        } else if showHike {
-            return searchedTrails.filter { $0.isHike }
-        } else if showBike {
-            return searchedTrails.filter { $0.isBike }
-        } else {
-            return searchedTrails
+            let typeFilteredTrails: [Trail]
+            if showHike && showBike {
+                typeFilteredTrails = searchedTrails
+            } else if showHike {
+                typeFilteredTrails = searchedTrails.filter { $0.isHike }
+            } else if showBike {
+                typeFilteredTrails = searchedTrails.filter { $0.isBike }
+            } else {
+                typeFilteredTrails = searchedTrails
+            }
+
+        return typeFilteredTrails.filter { $0.distance <= Int(maxDistance) }
         }
-    }
+
 
     var body: some View {
         NavigationView {
@@ -51,12 +56,13 @@ struct TrailsListView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.top, 10)
+                    .padding(.bottom,2)
                 
                 Rectangle()
                     .foregroundColor(Color(hex: "#108932"))
                     .frame(height: 10)
                     .cornerRadius(20)
-                    .padding(.bottom,40)
+                    .padding(.bottom,10)
                     .padding(.horizontal, 90)
                 
                 HStack {
@@ -101,8 +107,20 @@ struct TrailsListView: View {
                 }
                 
                 Divider()
+                
+                // Slider for Distance
+               VStack {
+                   HStack {
+                       Text(String(format: NSLocalizedString("max_distance_label", comment: "Label for the maximum distance slider"), Int(maxDistance)))
+                           .font(.subheadline)
+                           .fontWeight(.semibold)
+                   }
+                   Slider(value: $maxDistance, in: 0...2000, step: 1) // Adjust range as needed
+                       .accentColor(Color(hex: "#108932"))
+                       .padding(.horizontal)
+               }
+               .padding(.vertical, 5)
 
-                // List of Trails
                 List(filteredTrails) { trail in
                     NavigationLink(destination: TrailDetailView(trail: trail, languageManager: languageManager)) {
                         HStack {

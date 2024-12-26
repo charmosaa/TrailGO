@@ -17,7 +17,6 @@ class LanguageManager: ObservableObject {
     }
 
     init() {
-        // Set the initial language based on the device language or stored value
         self.selectedLanguage = Locale.current.languageCode ?? "en"
     }
 
