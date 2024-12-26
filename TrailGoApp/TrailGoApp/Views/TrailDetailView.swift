@@ -13,7 +13,6 @@ struct TrailDetailView: View {
     @ObservedObject var languageManager: LanguageManager
     
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     // Trail Title and Language Toggle
@@ -46,23 +45,30 @@ struct TrailDetailView: View {
                         Spacer()
                     }
                     .padding(.horizontal)
-                    
-                    // Image Carousel (placeholder for images)
+                   
                     ZStack {
-                        Image(trail.imageName) // Replace with real image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(height: 200)
-                            .clipped()
+                        NavigationLink(destination: GalleryView(photos: trail.photos)) {
+                            Image(trail.imageName)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(height: 200)
+                                .clipped()
+                        }
+                        .buttonStyle(PlainButtonStyle()) // Remove navigation link styling
+
                         HStack {
                             Spacer()
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(.white)
-                                .padding()
+                            NavigationLink(destination: GalleryView(photos: trail.photos)) {
+                                Image(systemName: "chevron.right")
+                                    .foregroundColor(.white)
+                                    .padding()
+                            }
+                            .buttonStyle(PlainButtonStyle()) // Remove navigation link styling
                         }
                     }
                     .cornerRadius(10)
                     .padding(.horizontal)
+
                     Rectangle()
                         .fill(Color(hex: trail.colorHex))
                         .frame(height: 15)
@@ -175,5 +181,5 @@ struct TrailDetailView: View {
                 }
             }
         }
-    }
+    
 }

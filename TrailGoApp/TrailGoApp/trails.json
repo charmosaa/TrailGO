@@ -23,7 +23,8 @@
             "en": "The Main Sudetes Trail is a picturesque route through the Sudetes mountains, offering beautiful views of mountains and valleys. The trail is perfect for long hikes, passing through numerous mountain huts and viewpoints. Hiking this trail lets you experience the mountain landscape and learn about the history of the Sudetes."
         },
         "isHike": true,
-        "isBike": false
+        "isBike": false,
+        "photos": ["gss", "gss1", "gss2","gss3","gss4"]
     },
     {
         "name": {
@@ -49,7 +50,8 @@
             "en": "The longest hiking trail in Poland, leading through the picturesque Beskids mountain ranges, with numerous elevations and beautiful views. This trail connects diverse landscapes, from forests to alpine meadows. It is an ideal route for lovers of long mountain hikes, offering challenges and unforgettable experiences."
         },
         "isHike": true,
-        "isBike": false
+        "isBike": false,
+        "photos": ["gsb", "gsb1", "gsb2","gsb3","gsb4","msb2"]
     },
     {
         "name": {
@@ -75,7 +77,8 @@
             "en": "Green Velo is the longest cycling trail in Poland, running through the eastern part of the country, offering stunning views of lakes, forests, and Eastern architecture. It is a great option for cyclists looking to discover charming, lesser-known corners of Poland. The trail connects various tourist attractions, ensuring comfortable conditions for cycling."
         },
         "isHike": false,
-        "isBike": true
+        "isBike": true,
+        "photos": ["greenVelo", "gv1", "gv2"]
     },
     {
         "name": {
@@ -101,7 +104,8 @@
             "en": "The Eagle's Nests Trail is an incredibly scenic route that passes through the Kraków-Częstochowa Jura, connecting the ruins of medieval castles. The trail is popular with both hikers and cyclists. While traversing this trail, one can admire the stunning landscapes of limestone rock formations and the mysterious castles that have survived over the centuries."
         },
         "isHike": true,
-        "isBike": true
+        "isBike": true,
+        "photos": ["orle", "og1", "og2","og3","og4"]
     },
     {
         "name": {
@@ -127,7 +131,8 @@
             "en": "Velo Dunajec is a cycling trail that leads through the picturesque Dunajec Valley, offering beautiful views of mountains, rivers, and fantastic tourist attractions. The trail connects Zakopane with Wietrzychowice, passing through places like Nowy Targ, Krościenko, and Sromowce. Ideal for cyclists looking for an active form of tourism and connection with nature."
         },
         "isHike": false,
-        "isBike": true
+        "isBike": true,
+        "photos": ["veloDunajec", "vd1", "vd2"]
     },
      {
          "name": {
@@ -147,7 +152,8 @@
          "distance": 600,
          "elevation": 5000,
          "isHike": true,
-         "isBike": false
+         "isBike": false,
+         "photos": ["zamki", "zp1", "zp2"]
      },
      {
          "name": {
@@ -167,7 +173,8 @@
          "distance": 137,
          "elevation": 6026,
          "isHike": true,
-         "isBike": false
+         "isBike": false,
+         "photos": ["msb", "msb1", "msb2"]
      },
      {
          "name": {
@@ -187,7 +194,8 @@
          "distance": 424,
          "elevation": 13455,
          "isHike": true,
-         "isBike": false
+         "isBike": false,
+         "photos": ["karpacki", "sk1", "sk2","sk3", "sk4"]
      },
      {
          "name": {
@@ -207,7 +215,8 @@
          "distance": 105,
          "elevation": 3800,
          "isHike": true,
-         "isBike": false
+         "isBike": false,
+         "photos": ["swietokrzyski", "gsk1", "gsk2","gsk3"]
      },
      {
          "name": {
@@ -227,7 +236,8 @@
          "distance": 365,
          "elevation": 1813,
          "isHike": true,
-         "isBike": true
+         "isBike": true,
+         "photos": ["nadmorski","nb1", "nb2", "nb3"]
      },
      {
          "name": {
@@ -247,6 +257,7 @@
          "distance": 440,
          "elevation": 12000,
          "isHike": true,
-         "isBike": false
+         "isBike": false,
+         "photos": ["nss", "nss1", "nss2","nss3"]
      }
  ]

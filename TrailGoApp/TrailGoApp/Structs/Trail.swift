@@ -23,6 +23,7 @@ struct Trail: Identifiable,Hashable, Codable {
     let description: [String: String]
     let isHike: Bool
     let isBike: Bool
+    let photos: [String]
     
     
     struct Coordinates: Hashable, Codable {
