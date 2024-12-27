@@ -5,11 +5,12 @@ import FirebaseFirestore
 struct LogInView: View {
     @State private var email = ""
     @State private var password = ""
-    @State private var isLoggedIn = false
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State private var userName: String = ""
     @State private var userSurname: String = ""
+    
+    @Binding var isLoggedIn: Bool  // Bind the isLoggedIn state
     
     @EnvironmentObject var languageManager: LanguageManager
     
@@ -77,11 +78,10 @@ struct LogInView: View {
                 
                 Spacer()
 
-                // Use a NavigationLink that automatically activates when isLoggedIn becomes true
-                NavigationLink(destination: ProfileView(userName: userName, userSurname: userSurname), isActive: $isLoggedIn) {
+                // NavigationLink to ProfileView, with isActive binding
+                NavigationLink(destination: ProfileView(isLoggedIn: $isLoggedIn), isActive: $isLoggedIn) {
                     EmptyView() // Invisible trigger for navigation
                 }
-
             }
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Login Status"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
@@ -138,5 +138,5 @@ struct LogInView: View {
 }
 
 #Preview {
-    LogInView()
+    LogInView(isLoggedIn: .constant(false))  // Preview with default isLoggedIn as false
 }

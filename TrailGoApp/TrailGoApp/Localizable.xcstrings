@@ -17,17 +17,6 @@
     "%lldkm" : {
 
     },
-    "✓ Completed: %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✓ Ukonczone: %lld"
-          }
-        }
-      }
-    },
     "20 dni 5h" : {
       "localizations" : {
         "en" : {
@@ -35,10 +24,32 @@
             "state" : "translated",
             "value" : "20 days 5h"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "20 dni 5h"
+          }
         }
       }
     },
     "Aby dodać ten szlak do listy, musisz być zalogowany." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To add this trail you must log in."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Aby dodać ten szlak do listy, musisz być zalogowany."
+          }
+        }
+      }
+    },
+    "Are you sure you want to log out?" : {
 
     },
     "Bike" : {
@@ -73,7 +84,14 @@
       }
     },
     "Completed: %lld" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukonczone: %lld"
+          }
+        }
+      }
     },
     "Email" : {
 
@@ -145,7 +163,14 @@
       "extractionState" : "manual"
     },
     "Language" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jezyk"
+          }
+        }
+      }
     },
     "Login" : {
       "localizations" : {
@@ -180,8 +205,24 @@
         }
       }
     },
-    "Logowanie wymagane" : {
+    "Logout" : {
 
+    },
+    "Logowanie wymagane" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login required"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logowanie wymagane"
+          }
+        }
+      }
     },
     "max_distance_label" : {
       "extractionState" : "manual",
@@ -263,17 +304,6 @@
     "Polski" : {
 
     },
-    "Privacy Policy" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ustawienia Prywatności"
-          }
-        }
-      }
-    },
     "Search" : {
       "localizations" : {
         "pl" : {
@@ -290,17 +320,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utwórz konto"
-          }
-        }
-      }
-    },
-    "Sign Up Failed" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tworzenie konta nie powiodło się"
           }
         }
       }
@@ -355,34 +374,12 @@
         }
       }
     },
-    "Total: 54 123 m" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "W sumie: 54 123m"
-          }
-        }
-      }
-    },
     "Total: 100 days 16h" : {
       "localizations" : {
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "W sumie: 100 dni 16h"
-          }
-        }
-      }
-    },
-    "Total: 2134km" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "W sumie: 2134km"
           }
         }
       }
@@ -539,7 +536,20 @@
       }
     },
     "Zaloguj się" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log in"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaloguj się"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

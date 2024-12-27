@@ -22,7 +22,6 @@ struct Trail: Identifiable, Hashable, Codable {
         var longitude: Double
     }
 
-    // Custom initializer to handle GeoPoint to Coordinates conversion
     init(id: String, name: [String: String], imageName: String, startingCity: String, endingCity: String, startCoordinate: Coordinates, endCoordinate: Coordinates, colorHex: String, distance: Int, elevation: Int, description: [String: String], isHike: Bool, isBike: Bool, photos: [String]) {
         self.id = id
         self.name = name

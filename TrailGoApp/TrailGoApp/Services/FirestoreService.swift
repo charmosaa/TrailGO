@@ -75,4 +75,17 @@ class FirestoreService {
             completion(ids)
         }
     }
+    // Fetch user info (first name and last name) from Firestore
+        func fetchUserInfo(userId: String, completion: @escaping (String, String) -> Void) {
+            db.collection("users").document(userId).getDocument { document, error in
+                if let document = document, document.exists {
+                    let firstName = document.data()?["name"] as? String ?? ""
+                    let lastName = document.data()?["surname"] as? String ?? ""
+                    completion(firstName, lastName)
+                } else {
+                    print("User document does not exist or error occurred: \(String(describing: error))")
+                    completion("", "")
+                }
+            }
+        }
 }

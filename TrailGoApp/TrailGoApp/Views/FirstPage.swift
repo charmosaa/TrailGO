@@ -1,5 +1,6 @@
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAuth
 
 class LanguageManager: ObservableObject {
     @Published var selectedLanguage: String {
@@ -27,7 +28,8 @@ extension String {
 struct FirstPage: View {
     @State var selection = 0
     @StateObject var languageManager = LanguageManager()
-    @State private var trails: [Trail] = [] // Store trails here
+    @State private var trails: [Trail] = []
+    @State private var isLoggedIn: Bool = false // This will manage login state
 
     init() {
         let appearance = UITabBarAppearance()
@@ -41,56 +43,65 @@ struct FirstPage: View {
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
     }
 
-    // Fetch trails from Firestore
     func loadTrailsFromFirestore() {
         FirestoreService.shared.fetchTrailsFromFirestore { fetchedTrails in
             self.trails = fetchedTrails
         }
     }
 
+    func checkAuthState() {
+        isLoggedIn = Auth.auth().currentUser != nil
+    }
+
     var body: some View {
-        VStack {
-            NavigationView {
-                VStack(alignment: .leading) {
-                    // Language Picker
-                    HStack {
-                        Spacer()
-                        Picker("Language", selection: $languageManager.selectedLanguage) {
-                            Text("English").tag("en")
-                            Text("Polski").tag("pl")
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                        .onChange(of: languageManager.selectedLanguage) { newValue in
-                            languageManager.setLanguage(newValue)
-                        }
-                        .frame(width: 150)
-                    }.padding(.trailing)
-
-                    // TabView for different sections
-                    TabView(selection: $selection) {
-                        // ContentView now receives trails as a parameter
-                        ContentView(languageManager: languageManager, trails: trails)
-                            .tabItem {
-                                Label("Explore", systemImage: "map")
-                            }.tag(0)
-
-                        // TrailsListView now receives trails as a parameter
-                        TrailsListView(languageManager: languageManager, trails: trails)
-                            .tabItem {
-                                Label("Your Trails", image: selection == 1 ? "routingColor" : "routingGrey")
-                            }.tag(1)
-
-                        LogInView()
-                            .tabItem {
-                                Label("Your Profile", systemImage: "person")
-                            }.tag(2)
-                            .environmentObject(languageManager)
+        NavigationView {
+            VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+                    Picker("Language", selection: $languageManager.selectedLanguage) {
+                        Text("English").tag("en")
+                        Text("Polski").tag("pl")
                     }
-                    .tint(Color(hex: "#108932"))
-                    .navigationTitle("TrailGO")
+                    .pickerStyle(SegmentedPickerStyle())
+                    .onChange(of: languageManager.selectedLanguage) { newValue in
+                        languageManager.setLanguage(newValue)
+                    }
+                    .frame(width: 150)
+                }.padding(.trailing)
+
+                TabView(selection: $selection) {
+                    ContentView(languageManager: languageManager, trails: trails)
+                        .tabItem {
+                            Label("Explore", systemImage: "map")
+                        }.tag(0)
+
+                    TrailsListView(languageManager: languageManager, trails: trails)
+                        .tabItem {
+                            Label("Your Trails", image: selection == 1 ? "routingColor" : "routingGrey")
+                        }.tag(1)
+
+                    Group {
+                        if isLoggedIn {
+                            ProfileView(isLoggedIn: $isLoggedIn) // Pass the binding
+                                .environmentObject(languageManager)
+                        } else {
+                            LogInView(isLoggedIn: $isLoggedIn) // Pass the binding
+                                .environmentObject(languageManager)
+                        }
+                    }
+                    .tabItem {
+                        Label("Your Profile", systemImage: "person")
+                    }
+                    .tag(2)
                 }
+                .tint(Color(hex: "#108932"))
+                .navigationTitle("TrailGO")
                 .onAppear {
-                    loadTrailsFromFirestore() // Load trails when the page appears
+                    loadTrailsFromFirestore()
+                    checkAuthState()
+                }
+                .onChange(of: Auth.auth().currentUser) { _ in
+                    checkAuthState()
                 }
             }
         }
