@@ -47,7 +47,7 @@ struct LogInView: View {
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(8)
                 }.padding(.horizontal, 40)
-                .padding(.top, 30)
+                .padding(.top, 20)
                 
                 Button(action: {
                     loginUser()

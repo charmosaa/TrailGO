@@ -17,12 +17,12 @@
     "%lldkm" : {
 
     },
-    "✓ Completed: 6" : {
+    "✓ Completed: %lld" : {
       "localizations" : {
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ukonczone: 6"
+            "value" : "✓ Ukonczone: %lld"
           }
         }
       }
@@ -36,6 +36,9 @@
           }
         }
       }
+    },
+    "Aby dodać ten szlak do listy, musisz być zalogowany." : {
+
     },
     "Bike" : {
       "localizations" : {
@@ -58,6 +61,16 @@
         }
       }
     },
+    "Completed" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukonczone"
+          }
+        }
+      }
+    },
     "Email" : {
 
     },
@@ -65,16 +78,44 @@
 
     },
     "Enter your email" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz email"
+          }
+        }
+      }
     },
     "Enter your name" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz imię"
+          }
+        }
+      }
     },
     "Enter your password" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz hasło"
+          }
+        }
+      }
     },
     "Enter your surname" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz nazwisko"
+          }
+        }
+      }
     },
     "Explore" : {
       "localizations" : {
@@ -103,7 +144,14 @@
 
     },
     "Login" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaloguj"
+          }
+        }
+      }
     },
     "Login Failed" : {
       "localizations" : {
@@ -123,10 +171,13 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zaloguj się żeby zobaczyć swoje statystyki"
+            "value" : "Zaloguj się, aby zobaczyć swoje statystyki"
           }
         }
       }
+    },
+    "Logowanie wymagane" : {
+
     },
     "max_distance_label" : {
       "extractionState" : "manual",
@@ -189,7 +240,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Haslo"
+            "value" : "Hasło"
           }
         }
       }
@@ -250,8 +301,7 @@
         }
       }
     },
-    "Surename" : {
-      "extractionState" : "stale",
+    "Surname" : {
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -261,15 +311,22 @@
         }
       }
     },
-    "Surname" : {
-
-    },
-    "To do: 4" : {
+    "To Do" : {
       "localizations" : {
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "W planach: 4"
+            "value" : "W planach"
+          }
+        }
+      }
+    },
+    "To do: %lld" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W planach: %lld"
           }
         }
       }
@@ -454,6 +511,9 @@
           }
         }
       }
+    },
+    "Zaloguj się" : {
+
     }
   },
   "version" : "1.0"

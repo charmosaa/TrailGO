@@ -3,13 +3,12 @@ import FirebaseFirestore
 
 class FirestoreService {
     static let shared = FirestoreService()  // Singleton instance
+    private let db = Firestore.firestore()
     
     private init() {}
-    
-    // Fetch trails from Firestore
+
+    // Fetch all trails from Firestore
     func fetchTrailsFromFirestore(completion: @escaping ([Trail]) -> Void) {
-        let db = Firestore.firestore()
-        
         db.collection("trails").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -20,9 +19,8 @@ class FirestoreService {
             var trails: [Trail] = []
             for document in querySnapshot!.documents {
                 let data = document.data()
-                // Create Trail from Firestore document
                 let trail = Trail(
-                    id: document.documentID, // Use Firestore's document ID as the trail's id
+                    id: document.documentID,
                     name: data["name"] as? [String: String] ?? [:],
                     imageName: data["imageName"] as? String ?? "",
                     startingCity: data["startingCity"] as? String ?? "",
@@ -47,6 +45,34 @@ class FirestoreService {
                 trails.append(trail)
             }
             completion(trails)
+        }
+    }
+    
+    // Fetch To Do Trail IDs
+    func fetchToDoTrailIds(userId: String, completion: @escaping ([String]) -> Void) {
+        db.collection("users").document(userId).collection("toDoTrails").getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching To Do Trail IDs: \(error)")
+                completion([])
+                return
+            }
+            
+            let ids = snapshot?.documents.map { $0.documentID } ?? []
+            completion(ids)
+        }
+    }
+    
+    // Fetch Completed Trail IDs
+    func fetchCompletedTrailIds(userId: String, completion: @escaping ([String]) -> Void) {
+        db.collection("users").document(userId).collection("completedTrails").getDocuments { snapshot, error in
+            if let error = error {
+                print("Error fetching Completed Trail IDs: \(error)")
+                completion([])
+                return
+            }
+            
+            let ids = snapshot?.documents.map { $0.documentID } ?? []
+            completion(ids)
         }
     }
 }
