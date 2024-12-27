@@ -1,21 +1,12 @@
-//
-//  Trail.swift
-//  TrailGoApp
-//
-//  Created by stud on 17/12/2024.
-//
-
-import SwiftUI
 import Foundation
 
-// Data Model for Trail
-struct Trail: Identifiable,Hashable, Codable {
-    let id = UUID()
+struct Trail: Identifiable, Hashable, Codable {
+    var id: String // This will be populated by Firestore's document ID
     let name: [String: String]
     let imageName: String
     let startingCity: String
     let endingCity: String
-    let startCoordinate: Coordinates // coordinates of start and end
+    let startCoordinate: Coordinates
     let endCoordinate: Coordinates
     let colorHex: String
     let distance: Int
@@ -25,10 +16,8 @@ struct Trail: Identifiable,Hashable, Codable {
     let isBike: Bool
     let photos: [String]
     
-    
     struct Coordinates: Hashable, Codable {
-            var latitude: Double
-            var longitude: Double
+        var latitude: Double
+        var longitude: Double
     }
 }
-

@@ -26,21 +26,22 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
 struct ContentView: View {
     @StateObject var languageManager: LanguageManager
-    let trails = loadTrails()
-    
     @State private var searchText: String = ""
     @StateObject private var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 51.1079, longitude: 17.0385), // Wrocław domyślnie
+        center: CLLocationCoordinate2D(latitude: 51.1079, longitude: 17.0385), // Wrocław default
         span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     )
     
+    // This property will hold the passed trails from FirstPage
+    var trails: [Trail]
+
+    // Filtered trails based on search text
     var filteredTrails: [Trail] {
-        
         let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name[languageManager.selectedLanguage]?.lowercased().contains(searchText.lowercased()) ?? false }
         return searchedTrails
     }
-        
+
     var body: some View {
         VStack {
             HStack {
@@ -59,8 +60,10 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(5)
+            
+            // Map displaying trails
             MapLine(trails: filteredTrails, languageManager: languageManager)
-            .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)
         }
         .onChange(of: locationManager.location) { newLocation in
             if let location = newLocation {
@@ -69,5 +72,3 @@ struct ContentView: View {
         }
     }
 }
-
-

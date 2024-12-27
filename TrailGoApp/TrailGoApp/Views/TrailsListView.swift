@@ -1,54 +1,34 @@
-//
-//  TrailsListView.swift
-//  TrailGoApp
-//
-//  Created by stud on 17/12/2024.
-//
-
 import SwiftUI
 import Foundation
 
-func loadTrails() -> [Trail] {
-    guard let url = Bundle.main.url(forResource: "trails", withExtension: "json") else {
-        fatalError("Nie znaleziono pliku trails.json!")
-    }
-    do {
-        let data = try Data(contentsOf: url)
-        let trails = try JSONDecoder().decode([Trail].self, from: data)
-        return trails
-    } catch {
-        fatalError("Błąd ładowania danych z JSON-a: \(error)")
-    }
-}
-
-
-
 struct TrailsListView: View {
     @StateObject var languageManager: LanguageManager
-    let trails = loadTrails()
+    // Accept trails as a parameter
+    var trails: [Trail]
+    
     @State private var searchText: String = ""
     @State private var showHike: Bool = false
     @State private var showBike: Bool = false
     @State private var maxDistance: Double = 2000.0
     
+    // Filter the trails based on search text and other filters
     var filteredTrails: [Trail] {
-            let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name[languageManager.selectedLanguage]?.lowercased().contains(searchText.lowercased()) ?? false }
-
-            let typeFilteredTrails: [Trail]
-            if showHike && showBike {
-                typeFilteredTrails = searchedTrails
-            } else if showHike {
-                typeFilteredTrails = searchedTrails.filter { $0.isHike }
-            } else if showBike {
-                typeFilteredTrails = searchedTrails.filter { $0.isBike }
-            } else {
-                typeFilteredTrails = searchedTrails
-            }
-
-        return typeFilteredTrails.filter { $0.distance <= Int(maxDistance) }
+        let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name[languageManager.selectedLanguage]?.lowercased().contains(searchText.lowercased()) ?? false }
+        
+        let typeFilteredTrails: [Trail]
+        if showHike && showBike {
+            typeFilteredTrails = searchedTrails
+        } else if showHike {
+            typeFilteredTrails = searchedTrails.filter { $0.isHike }
+        } else if showBike {
+            typeFilteredTrails = searchedTrails.filter { $0.isBike }
+        } else {
+            typeFilteredTrails = searchedTrails
         }
 
-
+        return typeFilteredTrails.filter { $0.distance <= Int(maxDistance) }
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -109,17 +89,17 @@ struct TrailsListView: View {
                 Divider()
                 
                 // Slider for Distance
-               VStack {
-                   HStack {
-                       Text(String(format: NSLocalizedString("max_distance_label", comment: "Label for the maximum distance slider"), Int(maxDistance)))
-                           .font(.subheadline)
-                           .fontWeight(.semibold)
-                   }
-                   Slider(value: $maxDistance, in: 0...2000, step: 1) // Adjust range as needed
-                       .accentColor(Color(hex: "#108932"))
-                       .padding(.horizontal)
-               }
-               .padding(.vertical, 5)
+                VStack {
+                    HStack {
+                        Text(String(format: NSLocalizedString("max_distance_label", comment: "Label for the maximum distance slider"), Int(maxDistance)))
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                    }
+                    Slider(value: $maxDistance, in: 0...2000, step: 1) // Adjust range as needed
+                        .accentColor(Color(hex: "#108932"))
+                        .padding(.horizontal)
+                }
+                .padding(.vertical, 5)
 
                 List(filteredTrails) { trail in
                     NavigationLink(destination: TrailDetailView(trail: trail, languageManager: languageManager)) {
@@ -140,4 +120,3 @@ struct TrailsListView: View {
         }
     }
 }
-

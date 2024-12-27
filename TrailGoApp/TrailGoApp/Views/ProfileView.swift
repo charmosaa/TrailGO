@@ -1,33 +1,28 @@
-//
-//  ProfileView.swift
-//  TrailGoApp
-//
-//  Created by stud on 17/12/2024.
-//
-
-
 import SwiftUI
 
 struct ProfileView: View {
+    var userName: String
+    var userSurname: String
+    
+    
     @EnvironmentObject var languageManager: LanguageManager
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
-                
                 Image(systemName: "person.crop.circle.fill")
                     .resizable()
                     .frame(width: 120, height: 120)
                     .foregroundColor(Color(hex: "#108932"))
                     .padding(.top, 20)
                 
-                
-                Text("Jan Kowalski")
+                // Display user's name and surname here
+                Text("\(userName) \(userSurname)")
                     .font(.title2)
                     .fontWeight(.semibold)
                 Divider()
                 
                 VStack(spacing: 20) {
-                    
                     HStack {
                         VStack {
                             Text("To do: 4")
@@ -39,7 +34,6 @@ struct ProfileView: View {
                         VStack {
                             Text("✓ Completed: 6")
                                 .font(.title3)
-                               
                         }
                     }
                     .padding(.horizontal)
@@ -71,28 +65,24 @@ struct ProfileView: View {
                 }
                 .padding()
                 
-            
-                VStack(spacing: 16) {
-                    NavigationLink(destination: TrailsListView(languageManager: languageManager)) {
-                        Text("Plan your next adventure ")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(hex: "#108932"))
-                            .underline()
-                    }
-                }
-                .padding()
-                Spacer()
+//                VStack(spacing: 16) {
+//                    NavigationLink(destination: TrailsListView(languageManager: languageManager)) {
+//                        Text("Plan your next adventure ")
+//                            .fontWeight(.bold)
+//                            .foregroundColor(Color(hex: "#108932"))
+//                            .underline()
+//                    }
+//                }
+//                .padding()
+//                Spacer()
             }
-            
-            
         }
     }
 }
 
-
 // Preview
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(userName: "Jan", userSurname: "Kowalski") // Provide a sample name and surname for preview
     }
 }

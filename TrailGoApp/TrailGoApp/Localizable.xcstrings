@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
     "%lld m" : {
 
     },
@@ -38,6 +48,7 @@
       }
     },
     "By clicking the button yu accept" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -51,6 +62,18 @@
 
     },
     "English" : {
+
+    },
+    "Enter your email" : {
+
+    },
+    "Enter your name" : {
+
+    },
+    "Enter your password" : {
+
+    },
+    "Enter your surname" : {
 
     },
     "Explore" : {
@@ -73,9 +96,6 @@
         }
       }
     },
-    "Jan Kowalski" : {
-
-    },
     "Key" : {
       "extractionState" : "manual"
     },
@@ -94,6 +114,9 @@
           }
         }
       }
+    },
+    "Login Status" : {
+
     },
     "Login to see your statistics" : {
       "localizations" : {
@@ -172,6 +195,7 @@
       }
     },
     "Plan your next adventure " : {
+      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -185,6 +209,7 @@
 
     },
     "Privacy Policy" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -215,6 +240,7 @@
       }
     },
     "Sign Up Failed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -225,6 +251,7 @@
       }
     },
     "Surename" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -233,6 +260,9 @@
           }
         }
       }
+    },
+    "Surname" : {
+
     },
     "To do: 4" : {
       "localizations" : {

@@ -1,68 +1,65 @@
-//
-//  CreateAccountView.swift
-//  TrailGoApp
-//
-//  Created by stud on 12/11/2024.
-//
-
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
 struct CreateAccountView: View {
+    @State private var name = ""
+    @State private var surname = ""
     @State private var email = ""
     @State private var password = ""
-    @State private var isLoggedIn = false
     @State private var showAlert = false
     @State private var alertMessage = ""
-    
+    @State private var isLoggedIn = false  // To handle login status and navigate to profile view
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
-               
-                VStack(alignment: .leading){
+                VStack(alignment: .leading) {
                     Text("Name")
                         .fontWeight(.bold)
                         .foregroundColor(Color(hex: "#108932"))
-                    TextField("Email", text: $email)
+                    TextField("Enter your name", text: $name)
                         .padding()
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(8)
-                } .padding(.horizontal,40)
-                
-                VStack(alignment: .leading){
-                    Text("Surename")
+                }.padding(.horizontal, 40)
+
+                VStack(alignment: .leading) {
+                    Text("Surname")
                         .fontWeight(.bold)
                         .foregroundColor(Color(hex: "#108932"))
-                    TextField("Email", text: $email)
+                    TextField("Enter your surname", text: $surname)
                         .padding()
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(8)
-                } .padding(.horizontal,40)
-                
-                VStack(alignment: .leading){
+                }.padding(.horizontal, 40)
+
+                VStack(alignment: .leading) {
                     Text("Email")
                         .fontWeight(.bold)
                         .foregroundColor(Color(hex: "#108932"))
-                    TextField("Email", text: $email)
+                    TextField("Enter your email", text: $email)
+                        .autocapitalization(.none) // Disable auto-capitalization
+                        .onChange(of: email) { newValue in
+                            email = newValue.lowercased() // Convert to lowercase
+                        }
                         .padding()
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(8)
-                } .padding(.horizontal,40)
-               
-                
-                
-                VStack(alignment: .leading){
+                }.padding(.horizontal, 40)
+
+                VStack(alignment: .leading) {
                     Text("Password")
                         .fontWeight(.bold)
                         .foregroundColor(Color(hex: "#108932"))
-                    SecureField("Password", text: $password)
+                    SecureField("Enter your password", text: $password)
                         .padding()
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(8)
-                } .padding(.horizontal,40)
-                
-                // Login Button
+                }.padding(.horizontal, 40)
+
                 Button(action: {
-                    loginUser()
+                    createUser()
                 }) {
                     Text("Sign Up")
                         .frame(maxWidth: .infinity)
@@ -71,51 +68,59 @@ struct CreateAccountView: View {
                         .background(Color(hex: "#108932"))
                         .foregroundColor(.white)
                         .cornerRadius(8)
-                        .padding(.top,20)
-                        .padding(.horizontal,40)
+                        .padding(.top, 20)
+                        .padding(.horizontal, 40)
                 }
-                HStack{
-                    Text("By clicking the button yu accept")
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hex: "#7A7A7A"))
-                    NavigationLink(destination: CreateAccountView()) {
-                                           Text("Privacy Policy")
-                                               .fontWeight(.bold)
-                                               .foregroundColor(Color(hex: "#108932"))
-                                       }
-                } .padding(.horizontal,40)
-                    .padding(.top,10)
-                
-                
                 Spacer()
                 
             }
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Sign Up Failed"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                Alert(title: Text("Sign Up"), message: Text(alertMessage), dismissButton: .default(Text("OK"), action: {
+                    if alertMessage == "Account created successfully!" {
+                        // Delay the navigation to ProfileView until the alert is dismissed
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            isLoggedIn = true  // Navigate to the profile view
+                        }
+                    }
+                }))
             }
             .padding()
         }
     }
-    
-    func loginUser() {
-        // Validate user input
-        if email.isEmpty || password.isEmpty {
-            alertMessage = "Please enter both username and password."
+
+    func createUser() {
+        // Validate input fields
+        if name.isEmpty || surname.isEmpty || email.isEmpty || password.isEmpty {
+            alertMessage = "Please fill in all fields."
             showAlert = true
             return
         }
-        
-        
-        if email == "user" && password == "password" {
-            isLoggedIn = true
-            alertMessage = "Login successful!"
-            showAlert = true
-        } else {
-            alertMessage = "Invalid username or password."
-            showAlert = true
+
+        // Create user in Firebase Auth
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                alertMessage = "Sign up failed: \(error.localizedDescription)"
+                showAlert = true
+            } else {
+                guard let user = authResult?.user else { return }
+                // Save additional user data to Firestore
+                let db = Firestore.firestore()
+                db.collection("users").document(user.uid).setData([
+                    "name": name,
+                    "surname": surname,
+                    "email": email,
+                    "uid": user.uid
+                ]) { error in
+                    if let error = error {
+                        alertMessage = "Failed to save user data: \(error.localizedDescription)"
+                    } else {
+                        alertMessage = "Account created successfully!"
+                    }
+                    showAlert = true
+                }
+            }
         }
     }
-    
 }
 
 #Preview {
