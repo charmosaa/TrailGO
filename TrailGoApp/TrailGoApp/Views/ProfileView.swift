@@ -9,13 +9,19 @@ struct ProfileView: View {
     @EnvironmentObject var languageManager: LanguageManager
     @StateObject private var trailManager = TrailManager()
     @State private var showToDo: Bool = true // To toggle between To Do and Completed
-
+  
+     private var totalDistance: Int {
+         trailManager.completedTrails.reduce(0) { $0 + $1.distance }
+     }
+     private var totalElevation: Int {
+         trailManager.completedTrails.reduce(0) { $0 + $1.elevation }
+     }
     var body: some View {
         NavigationStack {
             VStack {
                 Image(systemName: "person.crop.circle.fill")
                     .resizable()
-                    .frame(width: 90, height: 90)
+                    .frame(width: 90, height: 85)
                     .foregroundColor(Color(hex: "#108932"))
                 
                 // Display user's name and surname
@@ -26,35 +32,40 @@ struct ProfileView: View {
                 
                 VStack(spacing: 20) {
                     HStack {
-                        VStack {
+                        
+                        
+                        HStack {
+                            Image(systemName: "star.fill")
+                                .foregroundColor(Color(hex: "#108932"))
                             Text("To do: \(trailManager.toDoTrails.count)")
-                                .font(.title3)
+                                .font(.subheadline)
                         }
-                        
                         Spacer()
-                        
-                        VStack {
-                            Text("✓ Completed: \(trailManager.completedTrails.count)")
-                                .font(.title3)
+                        HStack {
+                            Image(systemName: "checkmark.seal.fill")
+                                .foregroundColor(Color(hex: "#108932"))
+                            Text("Completed: \(trailManager.completedTrails.count)")
+                                .font(.subheadline)
                         }
+                        
                     }
                     .padding(.horizontal)
                     
                     // Total Metrics
                     VStack(spacing: 20) {
-                        Text("Total: 2134km")
+                        Text("Total: \(totalDistance)km")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                         
-                        HStack(spacing: 30) {
+                        HStack() {
                             HStack {
                                 Image(systemName: "chart.bar.fill")
                                     .foregroundColor(Color(hex: "#108932"))
-                                Text("Total: 54 123 m")
+                                Text("Total: \(totalElevation)m")
                                     .font(.subheadline)
                             }
-                            
+                            Spacer()
                             HStack {
                                 Image(systemName: "clock.fill")
                                     .foregroundColor(Color(hex: "#108932"))
@@ -62,10 +73,9 @@ struct ProfileView: View {
                                     .font(.subheadline)
                             }
                         }
-                    }
+                    }.padding(.horizontal)
                     Divider()
                 }
-                .padding(.horizontal,10)
                 
                 // Buttons to toggle between "To Do" and "Completed" lists
                 HStack {

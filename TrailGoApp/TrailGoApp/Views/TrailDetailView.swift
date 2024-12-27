@@ -233,7 +233,7 @@ struct TrailDetailView: View {
                         toggleTrailInCollection(collection: "toDoTrails")
                     }) {
                         HStack {
-                            Image(systemName: "star")
+                            Image(systemName: "star.fill")
                             Text("W planach")
                                 .fontWeight(.semibold)
                         }
@@ -252,7 +252,7 @@ struct TrailDetailView: View {
                         toggleTrailInCollection(collection: "completedTrails")
                     }) {
                         HStack {
-                            Image(systemName: "checkmark.circle.fill")
+                            Image(systemName: "checkmark.seal.fill")
                             Text("Ukończony")
                                 .fontWeight(.semibold)
                         }
