@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%@ %@" : {
       "localizations" : {
         "en" : {
@@ -50,7 +53,14 @@
       }
     },
     "Are you sure you want to log out?" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na pewno chcesz się wylogować?"
+          }
+        }
+      }
     },
     "Bike" : {
       "localizations" : {
@@ -206,7 +216,14 @@
       }
     },
     "Logout" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyloguj"
+          }
+        }
+      }
     },
     "Logowanie wymagane" : {
       "localizations" : {

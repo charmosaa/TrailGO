@@ -25,7 +25,7 @@ struct LogInView: View {
                     .foregroundColor(Color(hex: "#108932"))
                     .frame(height: 10)
                     .cornerRadius(20)
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 20)
                     .padding(.horizontal, 60)
                 
                 VStack(alignment: .leading) {
@@ -48,7 +48,7 @@ struct LogInView: View {
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(8)
                 }.padding(.horizontal, 40)
-                .padding(.top, 20)
+                .padding(.top, 10)
                 
                 Button(action: {
                     loginUser()
@@ -74,13 +74,12 @@ struct LogInView: View {
                             .foregroundColor(Color(hex: "#108932"))
                     }
                 }.padding(.horizontal, 40)
-                .padding(.top, 30)
+                .padding(.top, 10)
                 
                 Spacer()
 
-                // NavigationLink to ProfileView, with isActive binding
                 NavigationLink(destination: ProfileView(isLoggedIn: $isLoggedIn), isActive: $isLoggedIn) {
-                    EmptyView() // Invisible trigger for navigation
+                    EmptyView()
                 }
             }
             .alert(isPresented: $showAlert) {
@@ -100,16 +99,13 @@ struct LogInView: View {
         // Sign in the user with Firebase Authentication
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error {
-                // If login fails, show the error message
                 alertMessage = "Login failed: \(error.localizedDescription)"
                 showAlert = true
             } else if let user = authResult?.user {
-                // If login is successful, set the alert message and flag
                 alertMessage = "Login successful!"
                 showAlert = true
-                isLoggedIn = true // Update isLoggedIn to trigger the navigation
+                isLoggedIn = true
                 
-                // Fetch user details from Firestore
                 fetchUserDetails(userId: user.uid)
             }
         }
@@ -138,5 +134,5 @@ struct LogInView: View {
 }
 
 #Preview {
-    LogInView(isLoggedIn: .constant(false))  // Preview with default isLoggedIn as false
+    LogInView(isLoggedIn: .constant(false))
 }
