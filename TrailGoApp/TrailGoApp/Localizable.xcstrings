@@ -14,6 +14,9 @@
         }
       }
     },
+    "%lld" : {
+
+    },
     "%lld m" : {
 
     },
@@ -21,6 +24,7 @@
 
     },
     "20 dni 5h" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -83,6 +87,9 @@
         }
       }
     },
+    "Cancel" : {
+
+    },
     "Comment" : {
 
     },
@@ -106,18 +113,8 @@
         }
       }
     },
-    "Difficulty and Grade" : {
+    "Difficulty" : {
 
-    },
-    "Difficulty: %lld" : {
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trudnosc: %lld"
-          }
-        }
-      }
     },
     "Email" : {
 
@@ -175,6 +172,9 @@
         }
       }
     },
+    "Experience" : {
+
+    },
     "Explore" : {
       "localizations" : {
         "pl" : {
@@ -185,18 +185,12 @@
         }
       }
     },
-    "Grade: %lld" : {
+    "Finished by: %lld people" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Experience: %lld"
-          }
-        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ov"
+            "value" : "Ukończony przez: %lld osoby"
           }
         }
       }
@@ -206,7 +200,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ocena: %lld"
+            "value" : "Piesza"
           }
         }
       }
@@ -234,17 +228,6 @@
         }
       }
     },
-    "Login Failed" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logowanie nieudane"
-          }
-        }
-      }
-    },
     "Login Status" : {
 
     },
@@ -253,7 +236,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zaloguj się, aby zobaczyć swoje statystyki"
+            "value" : "Zaloguj się, aby zobaczyć statystyki"
           }
         }
       }
@@ -350,17 +333,6 @@
         }
       }
     },
-    "Plan your next adventure " : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zaplanuj kolejna wyprawę"
-          }
-        }
-      }
-    },
     "Polski" : {
 
     },
@@ -434,6 +406,16 @@
         }
       }
     },
+    "Total: %lld days" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Razem: %lld dni"
+          }
+        }
+      }
+    },
     "Total: %lldkm" : {
       "localizations" : {
         "pl" : {
@@ -453,19 +435,6 @@
           }
         }
       }
-    },
-    "Total: 100 days 16h" : {
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "W sumie: 100 dni 16h"
-          }
-        }
-      }
-    },
-    "Trail Dates" : {
-
     },
     "Trail Feedback" : {
 
@@ -565,22 +534,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ukończony"
-          }
-        }
-      }
-    },
-    "Ukończony przez: 1234 osoby" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Finished by: 1234 people"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ukończony przez: 1234 osoby"
           }
         }
       }

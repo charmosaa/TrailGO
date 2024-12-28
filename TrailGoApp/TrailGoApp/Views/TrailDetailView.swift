@@ -32,10 +32,6 @@ struct TrailDetailView: View {
     }
     
     func fetchCompletedFeedback() {
-           guard let userId = Auth.auth().currentUser?.uid else {
-               return
-           }
-           
         FirestoreService.shared.fetchCompletedFeedback(trailId: trail.id) { feedbacks in
             self.completedFeedbacks = feedbacks
             self.averageDays = FirestoreService.shared.calculateAverageDays(feedbacks: feedbacks)
