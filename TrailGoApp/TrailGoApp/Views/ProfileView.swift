@@ -2,13 +2,16 @@ import SwiftUI
 import FirebaseAuth
 
 struct ProfileView: View {
-    @Binding var isLoggedIn: Bool // Binding to update isLoggedIn from parent view
+    @Binding var isLoggedIn: Bool
     
     @EnvironmentObject var languageManager: LanguageManager
     @StateObject private var trailManager = TrailManager()
     @State private var showToDo: Bool = true
     @State private var showLogoutAlert: Bool = false
-
+    @State private var totalDays: Int = 0
+    
+    private let firestoreService = FirestoreService.shared
+    
     private var totalDistance: Int {
         trailManager.completedTrails.reduce(0) { $0 + $1.distance }
     }
@@ -86,7 +89,7 @@ struct ProfileView: View {
                             HStack {
                                 Image(systemName: "clock.fill")
                                     .foregroundColor(Color(hex: "#108932"))
-                                Text("Total: 100 days 16h")
+                                Text("Total: \(totalDays) days")
                                     .font(.subheadline)
                             }
                         }
@@ -95,7 +98,7 @@ struct ProfileView: View {
                     Divider()
                 }
 
-                // Toggle between "To Do" and "Completed" lists
+                //"To Do" and "Completed" lists
                 HStack {
                     Button(action: {
                         showToDo = true
@@ -158,6 +161,9 @@ struct ProfileView: View {
             }
             .onAppear {
                 if let userId = Auth.auth().currentUser?.uid {
+                    firestoreService.calculateTotalDaysForUser(userId: userId) { days in
+                        self.totalDays = days
+                    }
                     trailManager.fetchData(userId: userId)
                 }
             }

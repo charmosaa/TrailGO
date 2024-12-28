@@ -1,127 +1,72 @@
-//
-//  QuestionaryView.swift
-//  TrailGoApp
-//
-//  Created by Martyna Lopianiak on 21/12/2024.
-//
-
-//
-//  LogInView.swift
-//  TrailGoApp
-//
-//  Created by stud on 12/11/2024.
-//
-
 import SwiftUI
 
 struct QuestionaryView: View {
-    
-    @State private var email = ""
-    @State private var password = ""
-    @State private var isLoggedIn = false
-    @State private var showAlert = false
-    @State private var alertMessage = ""
-    
-    var body: some View {
-        NavigationView {
-            VStack {
-                
-                Text("Login to see your statistics")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.top,40)
-                    
-                
-                Rectangle()
-                    .foregroundColor(Color(hex: "#108932"))
-                    .frame(height: 10)
-                    .cornerRadius(20)
-                    .padding(.bottom,40)
-                    .padding(.horizontal, 60)
-                
-                
-                
-                // Username TextField
-                VStack(alignment: .leading){
-                    Text("Email")
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hex: "#108932"))
-                    TextField("Email", text: $email)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(8)
-                } .padding(.horizontal,40)
-               
-                
-                // Password TextField
-                VStack(alignment: .leading){
-                    Text("Password")
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hex: "#108932"))
-                    SecureField("Password", text: $password)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(8)
-                } .padding(.horizontal,40)
-                .padding(.top, 30)
-                
-                // Login Button
-                Button(action: {
-                    loginUser()
-                }) {
-                    Text("Login")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .fontWeight(.bold)
-                        .background(Color(hex: "#108932"))
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                        .padding(.top,20)
-                        .padding(.horizontal,40)
-                }
-                HStack{
-                    Text("New here? ")
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hex: "#7A7A7A"))
-                    NavigationLink(destination: CreateAccountView()) {
-                                           Text("Sign Up")
-                                               .fontWeight(.bold)
-                                               .foregroundColor(Color(hex: "#108932"))
-                                       }
-                } .padding(.horizontal,40)
-                .padding(.top, 30)
-                
-                
-                Spacer()
-                
-            }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Login Failed"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
-            .padding()
-        }
-    }
-    
-    func loginUser() {
-        // Validate user input
-        if email.isEmpty || password.isEmpty {
-            alertMessage = "Please enter both username and password."
-            showAlert = true
-            return
-        }
-        
-        
-        if email == "user" && password == "password" {
-            isLoggedIn = true
-            alertMessage = "Login successful!"
-            showAlert = true
-        } else {
-            alertMessage = "Invalid username or password."
-            showAlert = true
-        }
-    }
-}
+    @Binding var feedback: TrailFeedback
+    var onSave: () -> Void
 
-#Preview {
-    QuestionaryView()
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("Trail Feedback")
+                .font(.headline)
+
+            // Start and End Dates
+            DatePicker("Start Date", selection: $feedback.startDate, displayedComponents: .date)
+            DatePicker("End Date", selection: $feedback.endDate, displayedComponents: .date)
+
+            // Difficulty Picker
+            VStack(alignment: .leading) {
+                Text("Difficulty")
+                Picker("Difficulty", selection: $feedback.difficulty) {
+                    ForEach(1...5, id: \.self) { value in
+                        Text("\(value)").tag(value)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .tint(Color(hex: "#108932") )
+            }
+
+            // Grade Picker
+            VStack(alignment: .leading) {
+                Text("Experience")
+                Picker("Experience", selection: $feedback.grade) {
+                    ForEach(1...5, id: \.self) { value in
+                        Text("\(value)").tag(value)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .tint(Color(hex: "#108932") )
+            }
+
+            // Comment Field
+            VStack(alignment: .leading) {
+                Text("Comment")
+                TextField("Write your comment here...", text: $feedback.comment)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+
+            // Buttons
+            HStack {
+                Button("Cancel") {
+                    // Handle cancel action
+                }
+                .padding()
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(10)
+
+                Button("Save") {
+                    onSave() // Call onSave closure to save feedback
+                }
+                .padding()
+                .background(Color(hex: "#108932") )
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                
+            }
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(20)
+        .shadow(radius: 10)
+        .frame(maxWidth: 400) // Constrain the width for better alignment
+    }
 }

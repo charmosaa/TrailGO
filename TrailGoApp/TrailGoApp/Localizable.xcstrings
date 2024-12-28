@@ -56,7 +56,7 @@
       "localizations" : {
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Na pewno chcesz się wylogować?"
           }
         }
@@ -83,6 +83,9 @@
         }
       }
     },
+    "Comment" : {
+
+    },
     "Completed" : {
       "localizations" : {
         "pl" : {
@@ -103,8 +106,31 @@
         }
       }
     },
+    "Difficulty and Grade" : {
+
+    },
+    "Difficulty: %lld" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trudnosc: %lld"
+          }
+        }
+      }
+    },
     "Email" : {
 
+    },
+    "End Date" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koniec"
+          }
+        }
+      }
     },
     "English" : {
 
@@ -159,12 +185,28 @@
         }
       }
     },
+    "Grade: %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Experience: %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ov"
+          }
+        }
+      }
+    },
     "Hike" : {
       "localizations" : {
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Piesza"
+            "value" : "Ocena: %lld"
           }
         }
       }
@@ -193,6 +235,7 @@
       }
     },
     "Login Failed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -321,6 +364,16 @@
     "Polski" : {
 
     },
+    "Save" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz"
+          }
+        }
+      }
+    },
     "Search" : {
       "localizations" : {
         "pl" : {
@@ -337,6 +390,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utwórz konto"
+          }
+        }
+      }
+    },
+    "Start Date" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Początek"
           }
         }
       }
@@ -400,6 +463,12 @@
           }
         }
       }
+    },
+    "Trail Dates" : {
+
+    },
+    "Trail Feedback" : {
+
     },
     "TrailGO" : {
 
@@ -528,6 +597,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W planach"
+          }
+        }
+      }
+    },
+    "Write your comment here..." : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj komentarz"
           }
         }
       }
