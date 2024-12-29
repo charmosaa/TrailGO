@@ -3,6 +3,7 @@ import SwiftUI
 struct QuestionaryView: View {
     @Binding var feedback: TrailFeedback
     var onSave: () -> Void
+    var onCancel: () -> Void
 
     var body: some View {
         VStack(spacing: 16) {
@@ -47,14 +48,14 @@ struct QuestionaryView: View {
             // Buttons
             HStack {
                 Button("Cancel") {
-                    // Handle cancel action
+                    onCancel()
                 }
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
 
                 Button("Save") {
-                    onSave() // Call onSave closure to save feedback
+                    onSave()
                 }
                 .padding()
                 .background(Color(hex: "#108932") )
@@ -67,6 +68,6 @@ struct QuestionaryView: View {
         .background(Color.white)
         .cornerRadius(20)
         .shadow(radius: 10)
-        .frame(maxWidth: 400) // Constrain the width for better alignment
+        .frame(maxWidth: 400)
     }
 }

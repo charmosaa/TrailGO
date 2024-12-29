@@ -186,7 +186,7 @@ struct TrailDetailView: View {
                             HStack {
                                 Image(systemName: "clock")
                                     .foregroundColor(Color(hex: "#108932"))
-                                Text(String(format: "%.1f", averageDays) + " days")
+                                Text(String(format: NSLocalizedString("avg_days", comment: "Label for average days"), Int(averageDays)))
                                     .font(.subheadline)
                             }
                         }
@@ -261,14 +261,20 @@ struct TrailDetailView: View {
                         }
                         .sheet(isPresented: $showQuestionnaire) {
                             if let feedback = feedback {
-                                QuestionaryView(feedback: Binding(
-                                    get: { feedback },
-                                    set: { self.feedback = $0 }
-                                )) {
-                                    saveTrailFeedback()
-                                    toggleTrailInCollection(collection: "completedTrails")
-                                    showQuestionnaire = false
-                                }
+                                QuestionaryView(
+                                    feedback: Binding(
+                                        get: { feedback },
+                                        set: { self.feedback = $0 }
+                                    ),
+                                    onSave: {
+                                        saveTrailFeedback()
+                                        toggleTrailInCollection(collection: "completedTrails")
+                                        showQuestionnaire = false
+                                    },
+                                    onCancel: {
+                                        showQuestionnaire = false // Dismiss the questionnaire
+                                    }
+                                )
                             }
                         }
                     }
@@ -302,7 +308,7 @@ struct TrailDetailView: View {
             }
             .background(
                 NavigationLink("", destination: LogInView(isLoggedIn: $isLoggedIn).environmentObject(languageManager), isActive: $showLoginView)
-                    .hidden() // Hide the link
+                    .hidden()
             )
         }
     

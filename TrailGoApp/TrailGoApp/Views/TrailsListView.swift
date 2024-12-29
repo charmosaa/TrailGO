@@ -3,7 +3,6 @@ import Foundation
 
 struct TrailsListView: View {
     @StateObject var languageManager: LanguageManager
-    // Accept trails as a parameter
     var trails: [Trail]
     
     @State private var searchText: String = ""
@@ -11,7 +10,6 @@ struct TrailsListView: View {
     @State private var showBike: Bool = false
     @State private var maxDistance: Double = 2000.0
     
-    // Filter the trails based on search text and other filters
     var filteredTrails: [Trail] {
         let searchedTrails = searchText.isEmpty ? trails : trails.filter { $0.name[languageManager.selectedLanguage]?.lowercased().contains(searchText.lowercased()) ?? false }
         
@@ -64,7 +62,6 @@ struct TrailsListView: View {
                 
                 Divider()
                 
-                // Add Filters for Hike/Bike
                 HStack {
                     Button("Hike") {
                         showHike.toggle()
@@ -88,14 +85,13 @@ struct TrailsListView: View {
                 
                 Divider()
                 
-                // Slider for Distance
                 VStack {
                     HStack {
                         Text(String(format: NSLocalizedString("max_distance_label", comment: "Label for the maximum distance slider"), Int(maxDistance)))
                             .font(.subheadline)
                             .fontWeight(.semibold)
                     }
-                    Slider(value: $maxDistance, in: 0...2000, step: 1) // Adjust range as needed
+                    Slider(value: $maxDistance, in: 0...2000, step: 1)
                         .accentColor(Color(hex: "#108932"))
                         .padding(.horizontal)
                 }

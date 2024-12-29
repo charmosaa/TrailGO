@@ -29,7 +29,7 @@ struct FirstPage: View {
     @State var selection = 0
     @StateObject var languageManager = LanguageManager()
     @State private var trails: [Trail] = []
-    @State private var isLoggedIn: Bool = false // This will manage login state
+    @State private var isLoggedIn: Bool = false 
 
     init() {
         let appearance = UITabBarAppearance()

@@ -23,23 +23,6 @@
     "%lldkm" : {
 
     },
-    "20 dni 5h" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "20 days 5h"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "20 dni 5h"
-          }
-        }
-      }
-    },
     "Aby dodać ten szlak do listy, musisz być zalogowany." : {
       "localizations" : {
         "en" : {
@@ -66,23 +49,29 @@
         }
       }
     },
+    "avg_days" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld days"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dni"
+          }
+        }
+      }
+    },
     "Bike" : {
       "localizations" : {
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rowerowa"
-          }
-        }
-      }
-    },
-    "By clicking the button yu accept" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Naciskając akceptujesz"
           }
         }
       }
@@ -309,12 +298,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grade: "
+            "value" : "Experience:"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Ocena: "
           }
         }
